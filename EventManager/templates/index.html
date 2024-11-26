@@ -1,0 +1,121 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+{% for items in she %}
+{{ items.image}}
+{% endfor %}
+
+
+
+ <!-- <div class="container">
+    <div class="row">
+
+      {% for clare in awesome %}
+        <div class="col-md-4 mb-4">
+            <div class="card" style="width: 18rem;">
+                
+                {% if clare.image %}
+                    <img src="{{ clare.image.url }}" class="card-img-top" alt="{{ clare.name }}">
+                    {% endif %}
+                <div class="card-body">
+          <h5 class="card-title"> {{ clare.name }} </h5><br>
+           <p class="card-text">{{ clare.description }}</p> <br>
+           <p class="card-text"><strong>Price:</strong> {{ clare.price }}</p> <br>
+          <p class="card-text"><strong>Email:</strong> {{ clare.email }}</p> <br>
+          </div>
+
+                <ul class="list-group list-group-flush">
+                  <li class="list-group-item"><strong>Phone:</strong> {{ clare.phone_number }} </li>
+                  <li class="list-group-item"><strong>Address:</strong> {{ clare.address }}</li>
+                  <li class="list-group-item"><strong>Email:</strong> {{ clare.email }} <br></li>
+                </ul>
+                <div class="card-body">
+                  {% if clare.website %}
+                        <a href="{{ clare.website }}" class="card-link" target="_blank">Visit Website</a>
+                        {% endif %}
+                  
+                </div>
+               
+              </div> 
+              
+        </div>
+
+        {% endfor %}
+    </div>
+</div> -->
+
+
+
+
+
+
+
+
+
+<!-- <div class="container">
+    <div class="row">
+        <div class="col">
+
+            Card with header and footer
+          <div class="card">
+            <div class="card-header">Header</div>
+            <div class="card-body">
+              
+              <div class="col-md-4">
+                <img src="assets/img/card.jpg" class="img-fluid rounded-start" alt="...">
+              </div>
+            </div>
+            <div class="card-footer">
+              Footer
+            </div>
+          </div><!-- End Card with header and footer -->
+<!-- 
+        </div>
+    </div>
+</div> 
+ -->
+
+
+
+ 
+        
+
+
+
+
+
+<!-- <div class="container-fluid">
+   
+    <div class="row">
+        <div class="col-md-4">
+            {% if merry %}
+                {% for celeb in merry %}
+                <div class="card bg-primary mb-3" style="max-width: 20rem;">
+                    <div class="card-header">
+                        <h3 class="m-4">{{ celeb.name }}</h3>
+                    </div>
+                    <div class="card-body">
+                        <strong>Name:</strong> {{ celeb.name }}<br>
+                        <strong>Location:</strong> {{ celeb.location }}<br>
+                        <strong>Description:</strong> {{ celeb.description }}<br>
+                        <strong>Start Date:</strong> {{ celeb.start_date }}<br>
+                        <strong>End Date:</strong> {{ celeb.end_date }}<br>
+                        <strong>Organizer:</strong> {{ celeb.organizer }}<br>
+                    </div>
+                </div>
+                {% endfor %}
+            {% else %}
+                <div class="alert alert-dismissible alert-danger">
+                    <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                    <strong>Oh snap!</strong> <a href="#" class="alert-link">No Events Here.</a> Try again later.
+                </div>
+            {% endif %}
+        </div>
+
+        
+    </div>
+    
+</div>  -->
+
+{% endblock content %}
