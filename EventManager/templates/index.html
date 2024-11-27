@@ -2,13 +2,13 @@
 {% load static %}
 {% block content %}
 
-{% for items in she %}
+{% comment %} {% for items in she %}
 {{ items.image}}
-{% endfor %}
+{% endfor %} {% endcomment %}
 
 
-
- <!-- <div class="container">
+{% comment %} 
+ <div class="container">
     <div class="row">
 
       {% for clare in awesome %}
@@ -43,7 +43,7 @@
 
         {% endfor %}
     </div>
-</div> -->
+</div> {% endcomment %}
 
 
 
@@ -52,29 +52,40 @@
 
 
 
-
-<!-- <div class="container">
+ <div class="container">
     <div class="row">
-        <div class="col">
+      {% for items in she %}
+      <div class="col-md-4 mb-4">
 
-            Card with header and footer
-          <div class="card">
-            <div class="card-header">Header</div>
+            
+            <div class="card" style="width: 18rem;">
+            <div class="card-header">
+            <h5 class="card-title"> {{ items.name }} </h5>
+            {% if items.location %}
+              <a href="{{ items.location }}" class="card-link" target="_blank">Visit Website</a>
+               <p class="card-text"><strong>date</strong> {{ items.start_date }}</p> 
+              {% endif %}
+            </div>
             <div class="card-body">
-              
+              {% if items.image %}
               <div class="col-md-4">
-                <img src="assets/img/card.jpg" class="img-fluid rounded-start" alt="...">
+                <img src="{{ items.image.url }}" class="card-img-top" alt="{{ items.image }}">
               </div>
+              {% else %}
+              <p>No image found for this item</p>
+              {% endif %}
             </div>
             <div class="card-footer">
-              Footer
+             <p class="card-text"><strong>date</strong> {{ items.end_date }}</p>
+             <p class="card-text">{{ items.description }}</p> 
             </div>
           </div><!-- End Card with header and footer -->
-<!-- 
+
         </div>
+        {% endfor %}
     </div>
 </div> 
- -->
+ 
 
 
 
