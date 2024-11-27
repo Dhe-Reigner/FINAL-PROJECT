@@ -1,5 +1,9 @@
 from django.db import models
 
+DATE = [
+    
+]
+
 # Create your models here.
 class Event(models.Model):
     name = models.CharField(max_length=100)
@@ -20,10 +24,10 @@ class EventDetail(models.Model):
     # attendees = models.ManyToManyField('EventAttendee')
     # speaker = models.ForeignKey('EventSpeaker', on_delete=models.CASCADE)
     date = models.DateTimeField()                        
-    location = models.CharField(max_length=100)
+    location = models.CharField(Event, max_length=100)
     phone_number = models.CharField(max_length=20)
     website = models.URLField()
-    description = models.TextField()
+    description = models.TextField(Event)
     
     def __str__(self):
-        return self.event_name
+        return str(self.event_name)

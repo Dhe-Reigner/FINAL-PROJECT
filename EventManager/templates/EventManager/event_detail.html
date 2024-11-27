@@ -23,7 +23,7 @@
         <div class="card-body">
             Special Events
           <h5 class="card-title"><strong>{{ items.event_name }} </strong> </h5>
-          <p class="card-text"><strong>date</strong> {{ items.end_date }}</p>
+          <p class="card-text"><strong>date</strong> {{ items.date }}</p>
           <p class="card-text">{{ items.description }}</p> 
         </div>
       </div>
@@ -62,8 +62,12 @@
               {% endif %}
             </div>
             <div class="card-footer">
-             <p class="card-text"><strong>date</strong> {{ items.end_date }}</p>
-             <p class="card-text">{{ items.description }}</p> 
+             <p class="card-text"><strong>date</strong> {{ items.date }}</p>
+             <p class="card-text"><strong>location</strong> {{ items.location }}</p>
+             <p class="card-text"><strong>description</strong>{{ items.description }}</p> 
+             <p class="card-text"><strong>phone number</strong> {{ items.phone_number }}</p>
+             <p class="card-text"><strong>website</strong> {{ items.website }}</p>
+             <p class="card-text"><strong>description</strong> {{ items.description }}</p>
             </div>
           </div><!-- End Card with header and footer -->
 
