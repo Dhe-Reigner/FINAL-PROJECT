@@ -1,0 +1,78 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<div class="container">
+    <div class="row">
+        {% for events in him %}
+        <div class="col">
+
+<!-- Card with an image on left -->
+<div class="card mb-3">
+    <div class="row g-0">
+      <div class="col-md-4">
+        {% if items.image %}
+              <div class="col-md-4">
+                <img src="{{ events.image.url }}" class="card-img-top" alt="{{ events.image }}">
+              </div>
+              {% else %}
+              <p>No image found for this item</p>
+              {% endif %}
+      </div>
+      <div class="col-md-8">
+        <div class="card-body">
+            Special Events
+          <h5 class="card-title"><strong>{{ items.event_name }} </strong> </h5>
+          <p class="card-text"><strong>date</strong> {{ items.end_date }}</p>
+          <p class="card-text">{{ items.description }}</p> 
+        </div>
+      </div>
+    </div>
+  </div><!-- End Card with an image on left -->
+
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+
+
+
+           <div class="container">
+    <div class="row">
+      {% for items in she %}
+      <div class="col-md-4 mb-4">
+
+            
+            <div class="card" style="width: 18rem;">
+            <div class="card-header">
+            <h5 class="card-title"> {{ items.name }} </h5>
+            {% if items.location %}
+              <a href="{{ items.location }}" class="card-link" target="_blank">Visit Website</a>
+               <p class="card-text"><strong>date</strong> {{ items.start_date }}</p> 
+              {% endif %}
+            </div>
+            <div class="card-body">
+              {% if items.image %}
+              <div class="col-md-4">
+                <img src="{{ items.image.url }}" class="card-img-top" alt="{{ items.image }}">
+              </div>
+              {% else %}
+              <p>No image found for this item</p>
+              {% endif %}
+            </div>
+            <div class="card-footer">
+             <p class="card-text"><strong>date</strong> {{ items.end_date }}</p>
+             <p class="card-text">{{ items.description }}</p> 
+            </div>
+          </div><!-- End Card with header and footer -->
+
+        </div>
+        {% endfor %}
+    </div>
+</div> 
+ 
+
+
+
+{% endblock content %}

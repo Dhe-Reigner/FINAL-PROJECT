@@ -3,4 +3,8 @@ from . import views
 
 urlpatterns = [
     path('',views.home,name='my_index'),
+    # path('about/',views.about,name='my_about'),
+    # path('contact/',views.contact,name='my_contact'),
+    path('event/<int:event_id>/',views.event_detail,name='my_event_detail'),
+    # path('event/create/',views.event_create,name='my_event_create'),
 ]

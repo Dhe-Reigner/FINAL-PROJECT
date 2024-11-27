@@ -12,4 +12,18 @@ class Event(models.Model):
      
     def __str__(self):
         return self.name
-                        
+     
+class EventDetail(models.Model):
+    image = models.ImageField(Event,upload_to='images/', default='', blank=True, null=True)
+    event_name = models.ForeignKey(Event, on_delete=models.CASCADE)
+    key_details = models.TextField()
+    # attendees = models.ManyToManyField('EventAttendee')
+    # speaker = models.ForeignKey('EventSpeaker', on_delete=models.CASCADE)
+    date = models.DateTimeField()                        
+    location = models.CharField(max_length=100)
+    phone_number = models.CharField(max_length=20)
+    website = models.URLField()
+    description = models.TextField()
+    
+    def __str__(self):
+        return self.event_name
