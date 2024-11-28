@@ -1,6 +1,8 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
+# from django.http import HttpResponseRedirect  
 from .models import Event
 from .models import EventDetail
+from .forms import EventForm
 
 # Create your views here.
 def home(request):
@@ -15,4 +17,16 @@ def event_detail(request):
     } )
     
 def add_event(request):
-    return render(request, 'EventManager/add_event.html')
+    submitted = False
+    if request.method == 'POST':
+        form = EventForm(request.POST, request.FILES)
+        if form.is_valid():
+            form.save()
+            return redirect('/add_event?submitted=True')
+    else:
+            form = EventForm
+            if 'submitted' in request.GET:
+                submitted = True
+                return render(request, 'EventManager/add_event.html',{
+                    'form':form, 'submitted':submitted
+    })

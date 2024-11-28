@@ -1,8 +1,8 @@
 from django.db import models
 
 DATE = [
-    
 ]
+
 
 # Create your models here.
 class Event(models.Model):

@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+</h1> ADD EVENTS HERE</h1>
+
+{% if submitted %}
+
+<div class="alert alert-dismissible alert-secondary">
+    <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+    <strong>Well done!</strong> Your Form was <a href="#" class="alert-link"> Submitted Successfully</a>.
+  </div>
+
+{% else %}
+
+<form action="" method="POST">
+
+    {% csrf_token %}
+
+    {{ form.as_p }}
+
+    <input type="submit" value="submit" class="btn btn-secondary"></input>
+
+</form>
+
+{% endif %}
+
+{% endblock content %}
