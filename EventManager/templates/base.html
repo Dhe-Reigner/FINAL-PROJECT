@@ -27,13 +27,13 @@
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link text-white" href="{% url 'event_detail' %}">Event Details</a>
+          <a class="nav-link text-white" href="{% url 'event_detail' event.id %}">Event Details</a>
         </li>
         <li class="nav-item">
           <a class="nav-link text-white" href="{% url 'add_event' %}">Add Event</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link text-white" href="#">About</a>
+          <a class="nav-link text-white" href="{% url 'list_venues' %}">Venues</a>
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle text-white" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Dropdown</a>

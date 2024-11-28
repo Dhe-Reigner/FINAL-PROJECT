@@ -70,6 +70,7 @@
               {% if items.image %}
               <div class="col-md-4">
                 <img src="{{ items.image.url }}" class="card-img-top" alt="{{ items.image }}">
+                <a href="{% url 'event_detail' event.id %}">{{ all_event_details }}</a><br>
               </div>
               {% else %}
               <p>No image found for this item</p>

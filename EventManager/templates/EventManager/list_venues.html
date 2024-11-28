@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<h1>Venues</h1>
+
+{% for venue in them %}
+<a href="{% url 'show_venue' venue.id %}">{{ venue }}</a><br>
+{% endfor %}
+
+{% endblock content %}
