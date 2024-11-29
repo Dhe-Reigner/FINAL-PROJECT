@@ -2,7 +2,7 @@
 {% load static %}
 {% block content %}
 
-<form action="{% url 'login' %}" method="POST">
+<!-- <form action="{% url 'login' %}" method="POST">
     {% csrf_token %}
     
     {{ form.as_p }}
@@ -16,70 +16,83 @@
   </div>
  
     <input type="submit" value="Submit" class="btn btn-secondary">
-</form> 
+</form>  -->
 
+ {% if form.errors %}
+<p>There was an error with your form...</p>
+{% endif %}
+<main>
+  <div class="container">
 
- <!-- <form action="">
-  <div class="mb-3">
-      <label for="address" class="form-label">Address</label>
-      <input type="text" class="form-control" id="address" name="address">
-    </div>
-  <div class="mb-3">
-      <label for="phone_number" class="form-label">Phone Number</label>
-      <input type="text" class="form-control" id="phone_number" name="phone_number">
-    </div>
-  <div class="mb-3">
-      <label for="email" class="form-label">Email</label>
-      <input type="email" class="form-control" id="email" name="email">
-    </div>
-  <div class="mb-3">
-      <label for="name" class="form-label">Name</label>
-      <input type="text" class="form-control" id="name" name="name">
-    </div>
-  <div class="mb-3">
-      <label for="end_date" class="form-label">End Date</label>
-      <input type="date" class="form-control" id="end_date" name="end_date">
-    </div>
-  <div class="mb-3">
-      <label for="start_date" class="form-label">Start Date</label>
-      <input type="date" class="form-control" id="start_date" name="start_date">
-    </div>
-  <div class="mb-3">
-      <label for="location" class="form-label">Location</label>
-      <input type="text" class="form-control" id="location" name="location">
-    </div>
-  <div class="mb-3">
-      <label for="image" class="form-label">Image</label>
-      <input type="file" class="form-control" id="image" name="image">
-    </div>
-  <div class="mb-3">
-      <label for="website" class="form-label">Website</label>
-      <input type="text" class="form-control" id="website" name="website">
-    </div>
-  <div class="mb-3">
-      <label for="price" class="form-label">Price</label>
-      <input type="number" class="form-control" id="price" name="price">
-    </div>
-  <div class="mb-3">
-      <label for="description" class="form-label">Description</label>
-      <input type="text" class="form-control" id="description" name="description">
-    </div>
-  <div class="mb-3">
-      <label for="address" class="form-label">Address</label>
-      <input type="text" class="form-control" id="address" name="address">
-    </div>
-  <div class="mb-3">
-      <label for="phone_number" class="form-label">Phone Number</label>
-      <input type="text" class="form-control" id="phone_number" name="phone_number">
-    </div>
-  <div class="mb-3">
-      <label for="email" class="form-label">Email</label>
-      <input type="email" class="form-control" id="email" name="email">
-    </div>
-  <div class="mb-3">
-      <label for="name" class="form-label">Name</label>
-      <input type="text" class="form-control" id="name" name="name">
-    </div>
- </form> -->
+    <section class="section register min-vh-100 d-flex flex-column align-items-center justify-content-center py-4">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-4 col-md-6 d-flex flex-column align-items-center justify-content-center">
+
+            <div class="d-flex justify-content-center py-4">
+              <a href="{% url 'my_index' %}" class="logo d-flex align-items-center w-auto">
+                <img src="assets/img/logo.png" alt="">
+                <span class="d-none d-lg-block">NiceAdmin</span>
+              </a>
+            </div><!-- End Logo -->
+
+            <div class="card mb-3">
+
+              <div class="card-body">
+
+                <div class="pt-4 pb-2">
+                  <h5 class="card-title text-center pb-0 fs-4">Login to Your Account</h5>
+                  <p class="text-center small">Enter your username & password to login</p>
+                </div>
+
+                <form action="{% url 'login' %}" method="POST" class="row g-3 needs-validation" novalidate>
+                  {% csrf_token %}
+
+                {{ form }}
+
+                  <div class="col-12">
+                    <label for="yourUsername" class="form-label">Username</label>
+                    <div class="input-group has-validation">
+                      <span class="input-group-text" id="inputGroupPrepend">@</span>
+                      <input type="text" name="username" class="form-control" id="yourUsername" required>
+                      <div class="invalid-feedback">Please enter your username.</div>
+                    </div>
+                  </div>
+
+                  <div class="col-12">
+                    <label for="yourPassword" class="form-label">Password</label>
+                    <input type="password" name="password" class="form-control" id="yourPassword" required>
+                    <div class="invalid-feedback">Please enter your password!</div>
+                  </div>
+
+                  <div class="col-12">
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" name="remember" value="true" id="rememberMe">
+                      <label class="form-check-label" for="rememberMe">Remember me</label>
+                    </div>
+                  </div>
+                  <div class="col-12">
+                    <button class="btn btn-primary w-100" type="submit">Login</button>
+                  </div>
+                  <div class="col-12">
+                    <p class="small mb-0">Don't have account? <a href="{% url 'register' %}">Create an account</a></p>  # Register Users
+                  </div>
+                </form>
+
+              </div>
+            </div>
+
+           
+
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+</main><!-- End #main -->
+
+<a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
 {% endblock content %}
