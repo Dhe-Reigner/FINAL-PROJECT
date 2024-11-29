@@ -15,25 +15,43 @@
   <body>
   <nav class="navbar navbar-expand-lg bg-primary" data-bs-theme="dark">
   <div class="container-fluid">
-    <a class="navbar-brand text-white" href="{% url 'my_index' %}">ShreeKanairo</a>
+    <a class="navbar-brand text-white" href="{% url 'my_display' %}">ShreeKanairo</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarColor01">
       <ul class="navbar-nav me-auto">
         <li class="nav-item">
-          <a class="nav-link active text-white" href="{% url 'my_index' %}">Events
+          <a class="nav-link active text-white" href="{% url 'my_display' %}">Home
             <span class="visually-hidden">(current)</span>
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link text-white" href="{% url 'event_detail' event.id %}">Event Details</a>
+          <a class="nav-link text-white" href="{% url 'my_index' %}">Events</a>
+        </li>
+        <li class="nav-item">
+          
+          {% if items.id %}
+    <h5 class="card-title">
+     <a class="nav-link text-white" href="{% url 'event_detail' event_id=items.id %}">Event Details</a>
+        {{ items.name }}
+      </a>
+    </h5>
+  {% else %}
+    <h5 class="card-title">
+      {{ items.name }}
+    </h5>
+  {% endif %}
+          
         </li>
         <li class="nav-item">
           <a class="nav-link text-white" href="{% url 'add_event' %}">Add Event</a>
         </li>
         <li class="nav-item">
           <a class="nav-link text-white" href="{% url 'list_venues' %}">Venues</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-white" href="{% url 'login' %}">Login</a>
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle text-white" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Dropdown</a>
@@ -83,11 +101,22 @@
   
 </nav> 
 
+<div class="container">
+{% if messages %}
 
+  {% for message in messages %}
+  <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
+    {{ message }}
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+  </div>
+  {% endfor %}
+{% endif %}
+  {% block content %}
 
-    {% block content %}
+  {% endblock content %}
+</div>
 
-    {% endblock content %}
+   
 
     <!-- Optional JavaScript; choose one of the two! -->
 

@@ -60,7 +60,8 @@
             
             <div class="card" style="width: 18rem;">
             <div class="card-header">
-            <h5 class="card-title"> {{ items.name }} </h5>
+            <h5 class="card-title">
+             <a href="{% url 'event_detail' event_id=items.id %}"> {{ items.name }}</a></h5>
             {% if items.location %}
               <a href="{{ items.location }}" class="card-link" target="_blank">Visit Website</a>
                <p class="card-text"><strong>date</strong> {{ items.start_date }}</p> 
@@ -69,8 +70,9 @@
             <div class="card-body">
               {% if items.image %}
               <div class="col-md-4">
-                <img src="{{ items.image.url }}" class="card-img-top" alt="{{ items.image }}">
-                <a href="{% url 'event_detail' event.id %}">{{ all_event_details }}</a><br>
+
+               <a href="{% url 'event_detail' event_id=items.id %}">
+                <img src="{{ items.image.url }}" class="card-img-top" alt="{{ items.image }}">{{ all_event_details }}</a><br>
               </div>
               {% else %}
               <p>No image found for this item</p>

@@ -5,13 +5,22 @@ DATE = [
 
 
 # Create your models here.
+
+class Display(models.Model):
+    image = models.ImageField(upload_to='images/', blank=True)
+    date = models.DateField()
+    name = models.CharField(default='', max_length=100)
+    
+    def __str__(self):
+        return str(self.name)
 class Event(models.Model):
     name = models.CharField(max_length=100)
     location = models.CharField(max_length=100)    
     image = models.ImageField(upload_to='images/', default='', blank=True, null=True)
-    description = models.CharField(max_length=100)
+    description = models.TextField()
     start_date = models.DateTimeField()
     end_date = models.DateTimeField()
+    event_detail = models.TextField(default='', blank=True, null=True)
     
      
     def __str__(self):
