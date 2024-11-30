@@ -144,3 +144,9 @@ CSRF_TRUSTED_ORIGINS = [
     'http://127.0.0.1:8000',
     'https://your-frontend-domain.com',
 ]
+
+LOGIN_URL = 'users:sign-in'
+LOGIN_REDIRECT_URL = 'users:account'
+LOGOUT_REDIRECT_URL = 'users:sign-in'
+
+BASE_COUNTRY = 'KENYA'
