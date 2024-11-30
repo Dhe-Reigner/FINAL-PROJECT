@@ -43,10 +43,11 @@ def display(request):
 #     })
 
 def event_detail(request, event_id):
-    event =  Event.objects.get(pk=event_id)
-    return render(request, 'EventManager/event_detail.html',{
-        'him':event
-    })
+    events =  Event.objects.filter(pk=event_id)
+    if events.exists():
+        return render(request, 'EventManager/event_detail.html',{
+            'events':events
+        })
 def add_event(request):
     submitted = False
     if request.method == 'POST':

@@ -56,4 +56,6 @@ def register_user(request):
             return redirect('my_index')
         else:
             form = UserCreationForm(request.POST)
+    else:
+        form = UserCreationForm()  # An unbound form
     return render(request,'authenticate/register.html',{'form':form})

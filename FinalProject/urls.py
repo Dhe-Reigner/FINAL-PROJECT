@@ -23,7 +23,8 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('',include('EventManager.urls')),
     path('members/',include('django.contrib.auth.urls')),
-    path('members/',include('members.urls'))
+    path('members/',include('members.urls')),
+    path('EventSalesSystem/', include('EventSalesSystem.urls')),
 ]
 
 # if settings.DEBUG:

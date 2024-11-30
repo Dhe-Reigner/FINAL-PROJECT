@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'EventManager',
     'members',
+    'EventSalesSystem',
 ]
 
 MIDDLEWARE = [
@@ -119,12 +120,18 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
 
 STATIC_URL = 'static/'
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles', 'static_cdn')
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static'),
 ]
 MEDIA_URL = 'media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+GOOGLE_API_KEY = 'AIzaSyAu3xmnRQZqIMOQh0pTTUmGHYqjEsMZfQ0'
+
+RECAPTCHA_KEY = '6LdoeI4qAAAAAN4NALBFZtIvp9tea-qpR3yrnp7N'
+
+RECAPTCHA_SECRET_KEY = '6LdoeI4qAAAAAFeOMG_IggK_tqOmuC1CwFcc9-4U'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
