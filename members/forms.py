@@ -27,7 +27,7 @@ class UserForm(UserCreationForm):
 class AuthForm(AuthenticationForm):
     username = forms.EmailField(max_length=254, required=True,
          widget=forms.TextInput(attrs={'placeholder': '*Username..'}))
-    password = forms.Charfield(
+    password = forms.CharField(
         widget = forms.PasswordInput(attrs={'placeholder': '*Password..','class': 'password'}))
     
     class Meta:
