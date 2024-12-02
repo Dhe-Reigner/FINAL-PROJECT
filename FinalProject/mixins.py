@@ -49,7 +49,7 @@ def reCAPTCHAValidation(request):
     return result.json()
 
 def RedirectParams(**kwargs):
-    '''Used to append url parameters when redirecting users'''
+    '''Used to append url parameters when redirecting members'''
     url = kwargs.get('url')
     params = kwargs.get('params', {})
     response = redirect(url)

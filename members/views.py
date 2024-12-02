@@ -96,7 +96,7 @@ class AccountView(TemplateView):
         return super().dispatch(*args, **kwargs)
     
 def Profile_view(request):
-    '''function view to allow users update their profile'''
+    '''function view to allow members update their profile'''
     user = request.user
     up = user.userprofile
     form = UserProfileForm(instance = up)

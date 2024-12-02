@@ -41,6 +41,12 @@
                 </address>
                 </td>
             </tr>
+            {% else %}
+            <tr>
+                <td>User Profile</td>
+                <td><a href="{% url 'members:profile' %}">Create user profile</a> </td>
+            </tr>
+            {% endif %}
         </tbody>
     </table>
 </div>

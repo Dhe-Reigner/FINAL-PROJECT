@@ -13,7 +13,7 @@ from django.urls import path
 from . import views
 
 urlpatterns = [
-    path('', views.AccountView.as_view(), name='account'),  # default view for users to see their account page
+    path('', views.AccountView.as_view(), name='account'),  # default view for members to see their account page
     path('profile', views.Profile_view, name='profile'),
     path('sign-up', views.SignUpView.as_view(), name='sign-up'),
     path('sign-in', views.SignInView.as_view(), name='sign-in'),
