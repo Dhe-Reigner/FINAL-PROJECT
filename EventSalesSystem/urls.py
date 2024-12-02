@@ -12,5 +12,14 @@ urlpatterns = [
    path('pages_register',views.pages_register,name='pages_register'),
    path('pages_general',views.pages_general,name='pages_general'),
    path('pages_profile',views.pages_profile,name='pages_profile'),
+   
+   path('affiliate_marketing',views.affiliate_marketing,name='affiliate_marketing'),
+   path('content_marketing',views.content_marketing,name='content_marketing'),
+   path('email_marketing',views.email_marketing,name='email_marketing'),
+   path('influencer_marketing',views.influencer_marketing,name='influencer_marketing'),
+   path('mobile_marketing',views.mobile_marketing,name='mobile_marketing'),
+   path('social_media_marketing',views.social_media_marketing,name='social_media_marketing'),
+   path('video_marketing',views.video_marketing,name='video_marketing'),
+    
 ]
  
