@@ -13,6 +13,8 @@ urlpatterns = [
    path('pages_general',views.pages_general,name='pages_general'),
    path('pages_profile',views.pages_profile,name='pages_profile'),
    
+   path('top_selling',views.top_selling,name='top_selling'),
+   
    path('affiliate_marketing',views.affiliate_marketing,name='affiliate_marketing'),
    path('content_marketing',views.content_marketing,name='content_marketing'),
    path('email_marketing',views.email_marketing,name='email_marketing'),

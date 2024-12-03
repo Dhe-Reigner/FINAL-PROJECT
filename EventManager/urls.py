@@ -11,8 +11,8 @@ urlpatterns = [
     path('event_detail/<int:event_id>/',views.event_detail,name='event_detail'),
     path('add_event/',views.add_event,name='add_event'),
     path('list_venues/',views.list_venues,name='list_venues'),
-    path('show_venue/<venue_id>/',views.show_venue,name='show_venue')
-    
+    path('show_venue/<venue_id>/',views.show_venue,name='show_venue'),
+
    
 ]
 

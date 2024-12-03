@@ -4,15 +4,16 @@
 
   <main id="main" class="main">
 
-    <div class="pagetitle">
-      <h1>Dashboard</h1>
+   <div class="pagetitle">
+      <h1>Marketing</h1>
       <nav>
         <ol class="breadcrumb">
           <li class="breadcrumb-item"><a href="{% url 'index' %}">Home</a></li>
-          <li class="breadcrumb-item active">Dashboard</li>
+          <li class="breadcrumb-item">Marketing</li>
+          <li class="breadcrumb-item active">Social Media Marketing</li>
         </ol>
       </nav>
-    </div><!-- End Page Title -->
+    </div>
 
     <section class="section dashboard">
       <div class="row">
@@ -47,7 +48,7 @@
                     </div>
                     <div class="ps-3">
                       <h6>145</h6>
-                      <span class="text-success small pt-1 fw-bold">12%</span> <span class="text-muted small pt-2 ps-1">increase</span>
+                      <span class="text-success small pt-1 fw-bold">34%</span> <span class="text-muted small pt-2 ps-1">increase</span>
 
                     </div>
                   </div>
@@ -82,7 +83,7 @@
                     </div>
                     <div class="ps-3">
                       <h6>$3,264</h6>
-                      <span class="text-success small pt-1 fw-bold">8%</span> <span class="text-muted small pt-2 ps-1">increase</span>
+                      <span class="text-success small pt-1 fw-bold">16%</span> <span class="text-muted small pt-2 ps-1">increase</span>
 
                     </div>
                   </div>
@@ -314,43 +315,18 @@
                         <th scope="col">Revenue</th>
                       </tr>
                     </thead>
+                    {% for items in all_social_media %}
                     <tbody>
                       <tr>
-                        <th scope="row"><a href="#"><img src="{% static 'assets/img/product-1.jpg' %}" alt=""></a></th>
-                        <td><a href="#" class="text-primary fw-bold">Ut inventore ipsa voluptas nulla</a></td>
-                        <td>$64</td>
-                        <td class="fw-bold">124</td>
-                        <td>$5,828</td>
-                      </tr>
-                      <tr>
-                        <th scope="row"><a href="#"><img src="{% static 'assets/img/product-2.jpg' %}" alt=""></a></th>
-                        <td><a href="#" class="text-primary fw-bold">Exercitationem similique doloremque</a></td>
-                        <td>$46</td>
-                        <td class="fw-bold">98</td>
-                        <td>$4,508</td>
-                      </tr>
-                      <tr>
-                        <th scope="row"><a href="#"><img src="{% static 'assets/img/product-3.jpg' %}" alt=""></a></th>
-                        <td><a href="#" class="text-primary fw-bold">Doloribus nisi exercitationem</a></td>
-                        <td>$59</td>
-                        <td class="fw-bold">74</td>
-                        <td>$4,366</td>
-                      </tr>
-                      <tr>
-                        <th scope="row"><a href="#"><img src="{% static 'assets/img/product-4.jpg' %}" alt=""></a></th>
-                        <td><a href="#" class="text-primary fw-bold">Officiis quaerat sint rerum error</a></td>
-                        <td>$32</td>
-                        <td class="fw-bold">63</td>
-                        <td>$2,016</td>
-                      </tr>
-                      <tr>
-                        <th scope="row"><a href="#"><img src="{% static 'assets/img/product-5.jpg' %}" alt=""></a></th>
-                        <td><a href="#" class="text-primary fw-bold">Sit unde debitis delectus repellendus</a></td>
-                        <td>$79</td>
-                        <td class="fw-bold">41</td>
-                        <td>$3,239</td>
+                        <th scope="row"><a href="#"><img src="{{ items.image.url }}" alt="{{ items.image }}" style="width: 100px; height: 100px;"></a></th>
+                        <td><a href="{% url 'event_detail' event_id=items.id %}" class="text-primary fw-bold">{{ items.product}} </a></td>
+                        
+                        <td>${{ items.price }} </td>
+                        <td class="fw-bold">{{ items.quantity_sold }} </td>
+                        <td>${{ items.revenue }} </td>
                       </tr>
                     </tbody>
+                    {% endfor %}
                   </table>
 
                 </div>
@@ -466,27 +442,31 @@
                     radar: {
                       // shape: 'circle',
                       indicator: [{
-                          name: 'Sales',
-                          max: 6500
+                          name: 'Instagram',
+                          max: 65000
                         },
                         {
-                          name: 'Administration',
+                          name: 'Facebook',
                           max: 16000
                         },
                         {
-                          name: 'Information Technology',
+                          name: 'Twitter',
                           max: 30000
                         },
                         {
-                          name: 'Customer Support',
+                          name: 'LinkedIn',
                           max: 38000
                         },
                         {
-                          name: 'Development',
+                          name: 'TikTok',
                           max: 52000
                         },
                         {
-                          name: 'Marketing',
+                          name: 'Youtube',
+                          max: 25000
+                        },
+                         {
+                          name: 'Google Business',
                           max: 25000
                         }
                       ]
@@ -495,11 +475,11 @@
                       name: 'Budget vs spending',
                       type: 'radar',
                       data: [{
-                          value: [4200, 3000, 20000, 35000, 50000, 18000],
+                          value: [4200, 3000, 20000, 35000, 50000, 18000, 20000],
                           name: 'Allocated Budget'
                         },
                         {
-                          value: [5000, 14000, 28000, 26000, 42000, 21000],
+                          value: [5000, 14000, 28000, 26000, 42000, 21000, 28000],
                           name: 'Actual Spending'
                         }
                       ]
@@ -561,24 +541,32 @@
                         show: false
                       },
                       data: [{
-                          value: 1048,
-                          name: 'Search Engine'
+                          value: 10483,
+                          name: 'Instagram'
                         },
                         {
-                          value: 735,
-                          name: 'Direct'
+                          value: 7355,
+                          name: 'Facebook'
                         },
                         {
-                          value: 580,
-                          name: 'Email'
+                          value: 5800,
+                          name: 'Twitter'
                         },
                         {
-                          value: 484,
-                          name: 'Union Ads'
+                          value: 4842,
+                          name: 'LinkedIn'
                         },
                         {
-                          value: 300,
-                          name: 'Video Ads'
+                          value: 3007,
+                          name: 'TikTok'
+                        },
+                         {
+                          value: 900,
+                          name: 'Youtube'
+                        },
+                         {
+                          value: 400,
+                          name: 'Google Business'
                         }
                       ]
                     }]
@@ -610,32 +598,34 @@
               <div class="news">
                 <div class="post-item clearfix">
                   <img src="{% static 'assets/img/news-1.jpg' %}" alt="">
-                  <h4><a href="#">Nihil blanditiis at in nihil autem</a></h4>
-                  <p>Sit recusandae non aspernatur laboriosam. Quia enim eligendi sed ut harum...</p>
+                  <h4><a href="#">Rise of Short-Form Video Content</a></h4>
+                  <p>Platforms like TikTok, Instagram Reels, and YouTube Shorts are dominating user engagement metrics.</p>
                 </div>
 
                 <div class="post-item clearfix">
                   <img src="{% static 'assets/img/news-2.jpg' %}" alt="">
-                  <h4><a href="#">Quidem autem et impedit</a></h4>
-                  <p>Illo nemo neque maiores vitae officiis cum eum turos elan dries werona nande...</p>
+                  <h4><a href="#">AI and Automation in Social Media</a></h4>
+                  <p>Tools like ChatGPT, Jasper, and Canva AI are helping marketers automate content creation.</p>
                 </div>
 
                 <div class="post-item clearfix">
                   <img src="{% static 'assets/img/news-3.jpg' %}" alt="">
-                  <h4><a href="#">Id quia et et ut maxime similique occaecati ut</a></h4>
-                  <p>Fugiat voluptas vero eaque accusantium eos. Consequuntur sed ipsam et totam...</p>
+                  <h4><a href="#"> Social Commerce Growth</a></h4>
+                  <p>Platforms like Instagram, Facebook, and TikTok are enabling in-app purchases, making social commerce a multi-billion dollar industry..</p>
                 </div>
 
                 <div class="post-item clearfix">
                   <img src="{% static 'assets/img/news-4.jpg' %}" alt="">
-                  <h4><a href="#">Laborum corporis quo dara net para</a></h4>
-                  <p>Qui enim quia optio. Eligendi aut asperiores enim repellendusvel rerum cuder...</p>
+                  <h4><a href="#">Privacy and Data Transparency</a></h4>
+                  <p>Platforms like Meta and Google are introducing new privacy-focused ad tools, such as server-side tracking.</p>
                 </div>
 
                 <div class="post-item clearfix">
                   <img src="{% static 'assets/img/news-5.jpg' %}" alt="">
-                  <h4><a href="#">Et dolores corrupti quae illo quod dolor</a></h4>
-                  <p>Odit ut eveniet modi reiciendis. Atque cupiditate libero beatae dignissimos eius...</p>
+                  <h4><a href="#">Rise of New Platforms</a></h4>
+                  <p>Threads by Instagram has emerged as a competitor to Twitter, now known as X.<br>
+                      Platforms like BeReal are appealing to Gen Z with a focus on authenticity.<br>
+                       Mastodon and Bluesky are gaining traction among niche audiences.</p>
                 </div>
 
               </div><!-- End sidebar recent posts-->

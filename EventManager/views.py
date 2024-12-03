@@ -7,6 +7,9 @@ from .models import EventDetail
 from .forms import EventForm
 from .models import Display
 
+
+
+
 # Create your views here.
 def home(request):
     all_events = Event.objects.all()
@@ -53,6 +56,8 @@ def show_venue(request, venue_id):
     return render(request, 'EventManager/show_venue.html',{
         'it':venue
     })
+
+
 
 
 # from django.shortcuts import render, redirect, reverse

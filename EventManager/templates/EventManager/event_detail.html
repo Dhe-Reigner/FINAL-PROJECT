@@ -12,7 +12,7 @@
     <div class="row g-0">
       <div class="col-md-4">
         {% if event.image %}
-              <div class="col-md-4">
+              <div class="col-md-12">
                 <img src="{{ event.image.url }}" class="card-img-top custom-img" alt="{{ event.image }}" style="max-width: 100%; height: auto;">
               </div>
               {% else %}
@@ -25,10 +25,11 @@
           <h5 class="card-title"><strong>{{ event.name }} </strong> </h5>
           <p class="card-text"><strong>start date</strong> {{ event.start_date }}</p>
           <p class="card-text"><strong>End date</strong> {{ event.end_date }}</p>
-          <p class="card-text"><strong>Location</strong> {{ event.location }}</p>
+          <p class="card-text"><strong>Location</strong> {{ event.location.name }}</p>
           <p class="card-text"><strong>Details</strong> {{ event.event_detail }}</p>
-
           <p class="card-text">{{ event.description }}</p> 
+          <input type="submit" value="submit" class="btn btn-secondary"></input>
+          <a href="{% url 'my_index' %}" class="btn btn-secondary">Cancel</a>
         </div>
       </div>
     </div>
@@ -42,7 +43,7 @@
 
 
 
-           <div class="container">
+           {% comment %} <div class="container">
     <div class="row">
       {% for items in she %}
       <div class="col-md-4 mb-4">
@@ -78,7 +79,7 @@
         </div>
         {% endfor %}
     </div>
-</div> 
+</div>  {% endcomment %}
  
 
 

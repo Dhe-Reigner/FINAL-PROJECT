@@ -8,24 +8,30 @@ DATE = [
 
 class Display(models.Model):
     image = models.ImageField(upload_to='images/', blank=True)
-    date = models.DateField()
+    date = models.DateField(null=True, blank=True)
     name = models.CharField(default='', max_length=100)
     
     def __str__(self):
         return str(self.name)
+    
+# class Location(models.Model):
+#     name = models.CharField(max_length=100)
+#     address = models.CharField(max_length=200)
+#     latitude = models.FloatField()
+#     longitude = models.FloatField()
 class Event(models.Model):
     name = models.CharField(max_length=100)
-    location = models.CharField(max_length=100)    
+    location = models.CharField(max_length=100)     
     image = models.ImageField(upload_to='images/', default='', blank=True, null=True)
     description = models.TextField()
-    start_date = models.DateTimeField()
-    end_date = models.DateTimeField()
+    start_date = models.DateTimeField(default="2024-01-01")
+    end_date = models.DateTimeField(default="2024-01-01")
     event_detail = models.TextField(default='', blank=True, null=True)
     
      
     def __str__(self):
         return self.name
-     
+    
 class EventDetail(models.Model):
     image = models.ImageField(Event,upload_to='images/', default='', blank=True, null=True)
     event_name = models.ForeignKey(Event, on_delete=models.CASCADE)

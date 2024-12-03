@@ -1,0 +1,66 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+</h1> ADD EVENTS HERE</h1>
+
+<!-- {% if submitted %}
+
+<div class="alert alert-dismissible alert-secondary">
+    <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+    <strong>Well done!</strong> Your Form was <a href="#" class="alert-link"> Submitted Successfully</a>.
+  </div>
+
+{% else %}
+
+
+<div class="row justify-content-center">
+  <div class="col-6">
+    <div class="card bg-light mb-3">
+      <div class="card-header">Add Event</div>
+      <div class="card-body">
+        <form action="{% url 'add_event' %}" method="POST">
+
+          {% csrf_token %}
+      
+          {{ form.as_p }}
+      
+          <input type="submit" value="submit" class="btn btn-secondary"></input>
+          <a href="{% url 'my_index' %}" class="btn btn-secondary">Cancel</a>
+      </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+{% endif %}  -->
+
+
+<div class="container-fluid">
+  <h3></h3>
+  <div class="row">
+    <div class="col-12">
+    {% if %}
+     <div class="card bg-light mb-3">
+        <div class="card-header">Header</div>
+        <div class="card-body">
+          <h4 class="card-title"></h4>
+          <p class="card-text"></p>
+        </div>
+      </div>
+    {% else %}
+    <div class="alert alert-dismissible alert-warning">
+  <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+  
+  <p class=""></p>
+</div>
+    {% endif %}
+     
+    </div>
+  </div>
+</div>
+
+
+{% endblock content %}
