@@ -21,11 +21,11 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarColor01">
       <ul class="navbar-nav me-auto">
-        <li class="nav-item">
+        <!-- <li class="nav-item">
           <a class="nav-link active text-white" href="{% url 'index' %}">Home
             <span class="visually-hidden">(current)</span>
           </a>
-        </li>
+        </li> -->
         <li class="nav-item">
           <a class="nav-link text-white" href="{% url 'my_index' %}">Events</a>
         </li>
@@ -50,18 +50,7 @@
         <li class="nav-item">
           <a class="nav-link text-white" href="{% url 'list_venues' %}">Venues</a>
         </li>
-        {% if user.is_authenticated %}
-        <li class="nav-item">
-          <a class="nav-link text-white" href="{% url 'logout' %}">Logout</a>
-        </li>
-        {% else %}
-        <li class="nav-item">
-          <a class="nav-link text-white" href="{% url 'register' %}">Register</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link text-white" href="{% url 'login' %}">Login</a>
-        </li>
-        {% endif %}
+       
       
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle text-white" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Dropdown</a>
@@ -74,10 +63,30 @@
           </div>
         </li>
       </ul>
-      <form class="d-flex">
-        <input class="form-control me-sm-2" type="search" placeholder="Search">
-        <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
-      </form>
+      <li class="nav-item d-flex">
+        <!-- <input class="form-control me-sm-2" type="search" placeholder="Search"> -->
+        <button type="button" class="btn btn-warning">
+          <a class="nav-link active text-white" href="{% url 'index' %}">Explore
+            <span class="visually-hidden">(current)</span>
+          </a>
+        </button>
+        <button type="button" class="btn btn-warning">
+          {% if user.is_authenticated %}
+        <li class="nav-item">
+          <a class="nav-link text-white" href="{% url 'logout' %}">Logout</a>
+        </li>
+        {% else %}
+        <li class="nav-item">
+          <a class="nav-link text-white" href="{% url 'register' %}">Register</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-white" href="{% url 'login' %}">Login</a>
+        </li>
+        {% endif %} 
+            <span class="visually-hidden">(current)</span>
+          </a>
+        </button>
+        </li> 
     </div>
   </div>
 </nav>

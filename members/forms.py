@@ -58,3 +58,15 @@
 #     class Meta:
 #         model = UserProfile
 #         fields = ('address', 'city', 'state', 'zip_code', 'country', 'phone_number', 'website', 'longitude', 'latitude')
+
+
+
+
+from django import forms
+from django.forms import ModelForm
+from .models import RegisterUser
+
+class RegisterUserForm(ModelForm):
+    class Meta:
+        model = RegisterUser
+        fields = ('name','email','username','password')

@@ -19,8 +19,18 @@
               <p>No image found for this item</p>
               {% endif %}
       </div>
+      <!-- <div class="col-md-4">
+        {% if event.qr_code %}
+              <div class="col-md-12">
+                <img src="{{ event.qr_code.url }}" class="card-img-top custom-img" alt="{{ event.qr_code }}" style="max-width: 100%; height: auto;">
+              </div>
+              {% else %}
+              <p>No image found for this item</p>
+              {% endif %}
+      </div> -->
       <div class="col-md-8">
         <div class="card-body">
+          <img src="{{ event.qr_code.url }}" class="card-img-top custom-img" alt="{{ event.qr_code }}" style="width: 20rem; height: 23rem;"><br>
             Special Events
           <h5 class="card-title"><strong>{{ event.name }} </strong> </h5>
           <p class="card-text"><strong>start date</strong> {{ event.start_date }}</p>

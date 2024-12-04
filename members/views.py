@@ -44,7 +44,9 @@ def register_user(request):
 #         return render(request, 'authenticate/register.html', {'form': form})
 
 def register_user(request):
+    form = None
     if request.method == "POST":
+        form = UserCreationForm(request.POST)
         if form.is_valid():
             form.save()
             username = form.cleaned_data['username']
@@ -52,9 +54,9 @@ def register_user(request):
             user = authenticate(username = username,password = password)
             login(request, user)
             messages.success(request, 'Registration Successful!!!')
-            return redirect('my_index')
+            return redirect('login')
         else:
-            form = UserCreationForm(request.POST)
+            form = UserCreationForm()
     else:
         form = UserCreationForm()  # An unbound form
     return render(request,'authenticate/register.html',{'form':form})
