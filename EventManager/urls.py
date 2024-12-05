@@ -3,6 +3,7 @@ from . import views
 
 urlpatterns = [
     path('',views.home,name='my_index'),
+     path('stk',views.stk,name='my_stk'),
     path('display/',views.display,name='my_display'),
     # path('about/',views.about,name='my_about'),
     # path('contact/',views.contact,name='my_contact'),
@@ -12,6 +13,7 @@ urlpatterns = [
     path('add_event/',views.add_event,name='add_event'),
     path('list_venues/',views.list_venues,name='list_venues'),
     path('show_venue/<venue_id>/',views.show_venue,name='show_venue'),
+    path('daraja/stk_push', views.stk_push_callback,name='stk_push_callback'),
 
    
 ]

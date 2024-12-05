@@ -14,7 +14,7 @@ def login_user(request):
 
         if user is not None:
             login(request, user)
-            return redirect('my_index')
+            return redirect('index')
         else:
             messages.success(request, 'Invalid credentials!!! Please Try Again')
             return redirect('login')

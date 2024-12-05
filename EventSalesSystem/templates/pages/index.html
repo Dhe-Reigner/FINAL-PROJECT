@@ -210,7 +210,7 @@
               </div>
             </div><!-- End Reports -->
 
-            <!-- Recent Sales -->
+              <!-- Remote Employees -->
             <div class="col-12">
               <div class="card recent-sales overflow-auto">
 
@@ -228,7 +228,7 @@
                 </div>
 
                 <div class="card-body">
-                  <h5 class="card-title">Recent Sales <span>| Today</span></h5>
+                  <h5 class="card-title">Remote Employees <span>| Today</span></h5>
 
                   <table class="table table-borderless datatable">
                     <thead>
@@ -244,35 +244,35 @@
                       <tr>
                         <th scope="row"><a href="#">#2457</a></th>
                         <td>Brandon Jacob</td>
-                        <td><a href="#" class="text-primary">At praesentium minu</a></td>
+                        <td><a href="#" class="text-primary">My Husband is Pregnant</a></td>
                         <td>$64</td>
                         <td><span class="badge bg-success">Approved</span></td>
                       </tr>
                       <tr>
                         <th scope="row"><a href="#">#2147</a></th>
-                        <td>Bridie Kessler</td>
-                        <td><a href="#" class="text-primary">Blanditiis dolor omnis similique</a></td>
+                        <td>Bridie Kinyua</td>
+                        <td><a href="#" class="text-primary">Gladiator2</a></td>
                         <td>$47</td>
                         <td><span class="badge bg-warning">Pending</span></td>
                       </tr>
                       <tr>
                         <th scope="row"><a href="#">#2049</a></th>
-                        <td>Ashleigh Langosh</td>
-                        <td><a href="#" class="text-primary">At recusandae consectetur</a></td>
+                        <td>Ashleigh Muthoni</td>
+                        <td><a href="#" class="text-primary">Hadithi</a></td>
                         <td>$147</td>
                         <td><span class="badge bg-success">Approved</span></td>
                       </tr>
                       <tr>
                         <th scope="row"><a href="#">#2644</a></th>
-                        <td>Angus Grady</td>
-                        <td><a href="#" class="text-primar">Ut voluptatem id earum et</a></td>
+                        <td>Vincent Ochieng</td>
+                        <td><a href="#" class="text-primar">Waridi 2</a></td>
                         <td>$67</td>
                         <td><span class="badge bg-danger">Rejected</span></td>
                       </tr>
                       <tr>
                         <th scope="row"><a href="#">#2644</a></th>
-                        <td>Raheem Lehner</td>
-                        <td><a href="#" class="text-primary">Sunt similique distinctio</a></td>
+                        <td>Rahema Abdub</td>
+                        <td><a href="#" class="text-primary">Mission Impossible 7</a></td>
                         <td>$165</td>
                         <td><span class="badge bg-success">Approved</span></td>
                       </tr>
@@ -282,9 +282,10 @@
                 </div>
 
               </div>
-            </div><!-- End Recent Sales -->
+            </div><!-- End Remote Employees -->
 
-            <!-- Top Selling -->
+
+               <!-- Top Selling -->
             <div class="col-12">
               <div class="card top-selling overflow-auto">
 
@@ -314,43 +315,18 @@
                         <th scope="col">Revenue</th>
                       </tr>
                     </thead>
+                    {% for items in all_dashboard %}
                     <tbody>
                       <tr>
-                        <th scope="row"><a href="#"><img src="{% static 'assets/img/product-1.jpg' %}" alt=""></a></th>
-                        <td><a href="#" class="text-primary fw-bold">Ut inventore ipsa voluptas nulla</a></td>
-                        <td>$64</td>
-                        <td class="fw-bold">124</td>
-                        <td>$5,828</td>
-                      </tr>
-                      <tr>
-                        <th scope="row"><a href="#"><img src="{% static 'assets/img/product-2.jpg' %}" alt=""></a></th>
-                        <td><a href="#" class="text-primary fw-bold">Exercitationem similique doloremque</a></td>
-                        <td>$46</td>
-                        <td class="fw-bold">98</td>
-                        <td>$4,508</td>
-                      </tr>
-                      <tr>
-                        <th scope="row"><a href="#"><img src="{% static 'assets/img/product-3.jpg' %}" alt=""></a></th>
-                        <td><a href="#" class="text-primary fw-bold">Doloribus nisi exercitationem</a></td>
-                        <td>$59</td>
-                        <td class="fw-bold">74</td>
-                        <td>$4,366</td>
-                      </tr>
-                      <tr>
-                        <th scope="row"><a href="#"><img src="{% static 'assets/img/product-4.jpg' %}" alt=""></a></th>
-                        <td><a href="#" class="text-primary fw-bold">Officiis quaerat sint rerum error</a></td>
-                        <td>$32</td>
-                        <td class="fw-bold">63</td>
-                        <td>$2,016</td>
-                      </tr>
-                      <tr>
-                        <th scope="row"><a href="#"><img src="{% static 'assets/img/product-5.jpg' %}" alt=""></a></th>
-                        <td><a href="#" class="text-primary fw-bold">Sit unde debitis delectus repellendus</a></td>
-                        <td>$79</td>
-                        <td class="fw-bold">41</td>
-                        <td>$3,239</td>
+                        <th scope="row"><a href="#"><img src="{{ items.preview.url }}" alt="{{ items.preview }}" style="width: 100px; height: 100px;"></a></th>
+                        <td><a href="{% url 'event_detail' event_id=items.id %}" class="text-primary fw-bold">{{ items.product}} </a></td>
+                        
+                        <td>${{ items.price }} </td>
+                        <td class="fw-bold">{{ items.quantity_sold }} </td>
+                        <td>${{ items.revenue }} </td>
                       </tr>
                     </tbody>
+                    {% endfor %}
                   </table>
 
                 </div>
@@ -388,7 +364,7 @@
                   <div class="activite-label">32 min</div>
                   <i class='bi bi-circle-fill activity-badge text-success align-self-start'></i>
                   <div class="activity-content">
-                    Quia quae rerum <a href="#" class="fw-bold text-dark">explicabo officiis</a> beatae
+                    Upcoming Events <a href="#" class="fw-bold text-dark">for</a>festive season
                   </div>
                 </div><!-- End activity item-->
 
@@ -396,7 +372,7 @@
                   <div class="activite-label">56 min</div>
                   <i class='bi bi-circle-fill activity-badge text-danger align-self-start'></i>
                   <div class="activity-content">
-                    Voluptatem blanditiis blanditiis eveniet
+                  Top-selling Tickets 
                   </div>
                 </div><!-- End activity item-->
 
@@ -404,7 +380,7 @@
                   <div class="activite-label">2 hrs</div>
                   <i class='bi bi-circle-fill activity-badge text-primary align-self-start'></i>
                   <div class="activity-content">
-                    Voluptates corrupti molestias voluptatem
+                    New Collaborations 
                   </div>
                 </div><!-- End activity item-->
 
@@ -412,7 +388,7 @@
                   <div class="activite-label">1 day</div>
                   <i class='bi bi-circle-fill activity-badge text-info align-self-start'></i>
                   <div class="activity-content">
-                    Tempore autem saepe <a href="#" class="fw-bold text-dark">occaecati voluptatem</a> tempore
+                    Event Tips <a href="#" class="fw-bold text-dark">&</a> Blog Articles
                   </div>
                 </div><!-- End activity item-->
 
@@ -420,7 +396,7 @@
                   <div class="activite-label">2 days</div>
                   <i class='bi bi-circle-fill activity-badge text-warning align-self-start'></i>
                   <div class="activity-content">
-                    Est sit eum reiciendis exercitationem
+                    Latest Event Updates
                   </div>
                 </div><!-- End activity item-->
 
@@ -428,7 +404,7 @@
                   <div class="activite-label">4 weeks</div>
                   <i class='bi bi-circle-fill activity-badge text-muted align-self-start'></i>
                   <div class="activity-content">
-                    Dicta dolorem harum nulla eius. Ut quidem quidem sit quas
+                    Featured Event Highlights
                   </div>
                 </div><!-- End activity item-->
 
@@ -588,8 +564,7 @@
 
             </div>
           </div><!-- End Website Traffic -->
-
-          <!-- News & Updates Traffic -->
+ <!-- News & Updates Traffic -->
           <div class="card">
             <div class="filter">
               <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
@@ -610,32 +585,34 @@
               <div class="news">
                 <div class="post-item clearfix">
                   <img src="{% static 'assets/img/news-1.jpg' %}" alt="">
-                  <h4><a href="#">Nihil blanditiis at in nihil autem</a></h4>
-                  <p>Sit recusandae non aspernatur laboriosam. Quia enim eligendi sed ut harum...</p>
+                  <h4><a href="#">Rise of Short-Form Video Content</a></h4>
+                  <p>Platforms like TikTok, Instagram Reels, and YouTube Shorts are dominating user engagement metrics.</p>
                 </div>
 
                 <div class="post-item clearfix">
                   <img src="{% static 'assets/img/news-2.jpg' %}" alt="">
-                  <h4><a href="#">Quidem autem et impedit</a></h4>
-                  <p>Illo nemo neque maiores vitae officiis cum eum turos elan dries werona nande...</p>
+                  <h4><a href="#">AI and Automation in Social Media</a></h4>
+                  <p>Tools like ChatGPT, Jasper, and Canva AI are helping marketers automate content creation.</p>
                 </div>
 
                 <div class="post-item clearfix">
                   <img src="{% static 'assets/img/news-3.jpg' %}" alt="">
-                  <h4><a href="#">Id quia et et ut maxime similique occaecati ut</a></h4>
-                  <p>Fugiat voluptas vero eaque accusantium eos. Consequuntur sed ipsam et totam...</p>
+                  <h4><a href="#"> Social Commerce Growth</a></h4>
+                  <p>Platforms like Instagram, Facebook, and TikTok are enabling in-app purchases, making social commerce a multi-billion dollar industry..</p>
                 </div>
 
                 <div class="post-item clearfix">
                   <img src="{% static 'assets/img/news-4.jpg' %}" alt="">
-                  <h4><a href="#">Laborum corporis quo dara net para</a></h4>
-                  <p>Qui enim quia optio. Eligendi aut asperiores enim repellendusvel rerum cuder...</p>
+                  <h4><a href="#">Privacy and Data Transparency</a></h4>
+                  <p>Platforms like Meta and Google are introducing new privacy-focused ad tools, such as server-side tracking.</p>
                 </div>
 
                 <div class="post-item clearfix">
                   <img src="{% static 'assets/img/news-5.jpg' %}" alt="">
-                  <h4><a href="#">Et dolores corrupti quae illo quod dolor</a></h4>
-                  <p>Odit ut eveniet modi reiciendis. Atque cupiditate libero beatae dignissimos eius...</p>
+                  <h4><a href="#">Rise of New Platforms</a></h4>
+                  <p>Threads by Instagram has emerged as a competitor to Twitter, now known as X.<br>
+                      Platforms like BeReal are appealing to Gen Z with a focus on authenticity.<br>
+                       Mastodon and Bluesky are gaining traction among niche audiences.</p>
                 </div>
 
               </div><!-- End sidebar recent posts-->

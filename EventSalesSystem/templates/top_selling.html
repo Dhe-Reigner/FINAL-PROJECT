@@ -37,9 +37,9 @@
 
 {% endif %}  -->
 
-
-<div class="container-fluid">
-  <h3>Affiliate</h3>
+<h4 class="text-center">All Top Selling in all Marketing Models</h4>
+ <div class="container-card">
+ <h5 class="text-decoration-underline">Top Selling in Affiliate Marketing</h5>
   <div class="row">
     <div class="col-12">
     {% if all_affiliate %}
@@ -49,42 +49,41 @@
           
           <p class="card-text">
             <div class="table-responsive">
-              <table class="table table-hover">
-                <thead>
-                  <tr>
-                    <th scope="col">Preview</th>
-                    <th scope="col">Product</th>
-                    <th scope="col">Price</th>
-                    <th scope="col">Quantity Sold</th>
-                    <th scope="col">Revenue</th>
-                    <th scope="col">Actions</th>
-                  </tr>
-                </thead>
-                <tbody>
-                 {% for affiliate in all_affiliate%}
-                 <tr>
-                   <td>
-                     <img src="{{ affiliate.product.image.url }}" class="img-fluid" alt="{{ affiliate.product.name }}">
-                   </td>
-                   <td>{{ affiliate.product.name }}</td>
-                   <td>${{ affiliate.product.price }}</td>
-                   <td>{{ affiliate.quantity_sold }}</td>
-                   <td>${{ affiliate.revenue }}</td>
-                   <td>
-                     <a href="{% url 'edit_affiliate' affiliate.id %}" class="btn btn-primary btn-sm">Edit</a>
-                     <a href="{% url 'delete_affiliate' affiliate.id %}" class="btn btn-danger btn-sm">Delete</a>
-                   </td>
-                 </tr>
-                 {% endfor %}
+              <table class="table text-center">
+            <thead>
+              <tr>
+                <th scope="col">Preview</th>
+                <th scope="col">Product</th>
+                <th scope="col">Price</th>
+                <th scope="col">Quantity Sold</th>
+                <th scope="col">Revenue</th>
+                <th scope="col">Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+                
+                {% for affiliate in all_affiliate %}
+                <td>
+                  <img src="{{ affiliate.preview.url }}" class="img-fluid" alt="{{ affiliate.preview }}">
+                </td>
+                <td>{{ affiliate.product }}</td>
+                <td>${{ affiliate.price }}</td>
+                <td>{{ affiliate.quantity_sold }}</td>
+                <td>${{ affiliate.revenue }}</td>
+                <td><a href="" class="btn btn-sm btn-outline-success">Update</a></td>
+                <td><a href="" class="btn btn-sm btn-outline-danger">Delete</a></td>
                  
-                </tbody>
-              </table>
+              </tr>
+              {% endfor %}
+             
+            </tbody>
+          </table> 
             </div>
           </p>
         </div>
       </div>
     {% else %}
-    <div class="alert alert-dismissible alert-warning">
+    <div class="alert alert-dismissible alert-warning">You Are Fucked Up!!!!
   <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
   
   <p class=""></p>
@@ -93,7 +92,44 @@
      
     </div>
   </div>
-</div>
+</div> 
 
+
+<!-- <h4 class="text-center">All Top Selling in all Marketing Models</h4>
+<div class="container-card">
+    <h5 class="text-decoration-underline">List of Events</h5>
+
+    <div>
+        <table class="table text-center">
+            <thead>
+              <tr>
+                <th scope="col">Preview</th>
+                <th scope="col">Product</th>
+                <th scope="col">Price</th>
+                <th scope="col">Quantity Sold</th>
+                <th scope="col">Revenue</th>
+                <th scope="col">Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+                
+                {% for affiliate in all_affiliate %}
+                <td>
+                  <img src="{{ affiliate.preview.url }}" class="img-fluid" alt="{{ affiliate.preview }}">
+                </td>
+                <td>{{ affiliate.product }}</td>
+                <td>${{ affiliate.price }}</td>
+                <td>{{ affiliate.quantity_sold }}</td>
+                <td>${{ affiliate.revenue }}</td>
+                <td><a href="" class="btn btn-sm btn-outline-success">Update</a></td>
+                <td><a href="" class="btn btn-sm btn-outline-danger">Delete</a></td>
+                 
+              </tr>
+              {% endfor %}
+             
+            </tbody>
+          </table> 
+    </div>
+</div> -->
 
 {% endblock content %}

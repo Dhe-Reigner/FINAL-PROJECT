@@ -2,7 +2,7 @@
 {% load static %}
 {% block content %}
 
-<div class="col">
+{% comment %} <div class="col">
     <img src="{% static 'img/d11.jpg' %}" class="img-fluid" alt="..."
     <br><br>
     <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
@@ -63,8 +63,41 @@
 {{ images.description }}
               </div>
              
-            </div>
+            </div> 
+            {% endfor %}
+            {% endcomment %}
 
-{% endfor %}
+<div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="{% static 'img/d11.jpg' %}" class="d-block w-100" alt="...">
+    </div>
+    <div class="carousel-item">
+      <img src="{% static 'img/d1.jpg' %}" class="d-block w-100" alt="..."> 
+    </div>
+    <div class="carousel-item">
+      <img src="{% static 'img/d2.jpg' %}" class="d-block w-100" alt="...">
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+
+  {% for displays in display %}
+      <div class="card" style="width: 18rem;">
+ 
+  <img src="{{ displays.image.url }}" class="card-img-top" alt="{{ displays.image }}" style="width: 20rem; height: 23rem;"></a><br>
+  <div class="card-body">
+    <h5 class="card-title">{{ displays.date }} </h5>
+    <p class="card-text">{{ displays.name }} </p>
+    {% comment %} <button type="button" class="btn btn-warning"> <a href="{% url 'event_detail' event_id=items.id %}">Tickets</a></button> {% endcomment %}
+  </div>
+  {% endfor %}
 
 {% endblock content %}

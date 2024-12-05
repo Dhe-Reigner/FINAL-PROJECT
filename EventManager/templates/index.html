@@ -62,10 +62,10 @@
             <div class="card-header">
             <h5 class="card-title">
              <a href="{% url 'event_detail' event_id=items.id %}"> {{ items.name }}</a></h5>
-            {% if items.location %}
+            {% comment %} {% if items.location %}
               <a href="{{ items.location }}" class="card-link" target="_blank">Visit Website</a>
                {% comment %} <p class="card-text"><strong>date</strong> {{ items.start_date }}</p>  {% endcomment %}
-              {% endif %}
+            {% comment %}  {% endif %} {% endcomment %}
             </div>
             <div class="card-body">
               {% if items.image %}

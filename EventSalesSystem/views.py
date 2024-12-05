@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from.models import Dashboard
 from .models import Social
 from.models import Content
 from.models import Email
@@ -40,6 +41,11 @@ def pages_profile(request):
 def top_selling(request):
     return render(request, 'top_selling.html', {})
 
+def dashboard(request):
+    all_dashboard = Dashboard.objects.all()
+    return render(request, 'dashboard.html', {
+        'all_dashboard': all_dashboard,  # pass all dashboard data to the template,  # pass all social media data to the template
+    })
 def affiliate_marketing(request):
     all_affiliate = Affiliate.objects.all()
     return render(request, 'affiliate_marketing.html', {
