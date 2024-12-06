@@ -325,28 +325,13 @@
           <!-- End Marketing Nav -->
 
       <li class="nav-item">
-        <a class="nav-link collapsed" data-bs-target="#forms-nav" data-bs-toggle="collapse" href="#">
+        <a class="nav-link collapsed" data-bs-target="#forms-nav" data-bs-toggle="collapse" href="{% url 'remote_works' %}">
           <i class="bi bi-journal-text"></i><span>Remote Works</span><i class="bi bi-chevron-down ms-auto"></i>
         </a>
         <ul id="forms-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
           <li>
-            <a href="forms-elements.html">
-              <i class="bi bi-circle"></i><span>Form Elements</span>
-            </a>
-          </li>
-          <li>
-            <a href="forms-layouts.html">
-              <i class="bi bi-circle"></i><span>Form Layouts</span>
-            </a>
-          </li>
-          <li>
-            <a href="forms-editors.html">
-              <i class="bi bi-circle"></i><span>Form Editors</span>
-            </a>
-          </li>
-          <li>
-            <a href="forms-validation.html">
-              <i class="bi bi-circle"></i><span>Form Validation</span>
+            <a href="{% url 'remote_works' %}">
+              <i class="bi bi-circle"></i><span>Remote Works</span>
             </a>
           </li>
         </ul>
@@ -358,16 +343,16 @@
         </a>
         <ul id="tables-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
           <li>
-            <a href="tables-general.html">
-              <i class="bi bi-circle"></i><span>General Tables</span>
+            <a href="{% url 'courses' %}">
+              <i class="bi bi-circle"></i><span>Our Courses </span>
             </a>
           </li>
-          <li>
+          {% comment %} <li>
             <a href="tables-data.html">
               <i class="bi bi-circle"></i><span>Data Tables</span>
             </a>
-          </li>
-        </ul>
+          </li> {% endcomment %}
+        </ul> 
       </li><!-- End Tables Nav -->
 {% comment %} 
       <li class="nav-item">

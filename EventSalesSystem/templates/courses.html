@@ -1,0 +1,73 @@
+{% extends 'pages/base.html' %}
+{% load static %}
+{% block content %}
+
+
+
+
+
+{% comment %} <div class="container">
+    <div class="row">
+        {% for items in all_courses %}
+        <div class="col">
+
+ <div class="card mb-3">
+            <!-- <img src="assets/img/card.jpg" class="card-img-top" alt="..."> -->
+            <img src="{{ items.image.url }}" class="card-img-top custom-img" alt="{{ items.image }}" style="max-width: 100%; height: auto;">
+            <div class="card-body">
+              <h5 class="card-title">{{ items.title }} </h5>
+              <p class="card-text">Ksh{{ items.cost }} </p>
+            </div>
+          </div><!-- End Card with an image on top -->
+
+        </div>
+        {% endfor %}
+    </div>
+</div> {% endcomment %}
+
+
+
+
+
+<main id="main" class="main">
+
+    <div class="pagetitle">
+      <h1>Remote Works</h1>
+      <nav>
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="{% url 'index' %}">Home</a></li>
+          <!-- <li class="breadcrumb-item"></li> -->
+          <li class="breadcrumb-item active">Work with us</li>
+        </ol>
+      </nav>
+    </div><!-- End Page Title -->
+
+    <section class="section">
+      <div class="row">
+
+        {% for items in all_courses %}
+        <div class="col-md-4 mb-4">
+
+ <div class="card md-6">
+            <!-- <img src="assets/img/card.jpg" class="card-img-top" alt="..."> -->
+            <img src="{{ items.image.url }}" class="card-img-top custom-img" alt="{{ items.image }}" style="width:10rem; height:13rem;">
+            <div class="card-body">
+              <h5 class="card-title">{{ items.course_name }} </h5>
+              <p class="card-text">Ksh{{ items.price }} </p>
+            </div>
+            <div class="card-footer">
+          <button type="button" class="btn btn-warning"> <a href="{% url 'event_detail' event_id=items.id %}">View Details</a></button>
+          <button type="button" class="btn btn-warning"> <a href="{% url 'event_detail' event_id=items.id %}">Enroll</a></button>
+            </div>
+          </div><!-- End Card with an image on top -->
+
+        </div>
+        {% endfor %}
+        </div>
+
+      </div>
+    </section>
+
+  </main><!-- End #main -->
+
+{% endblock %}

@@ -24,6 +24,7 @@ urlpatterns = [
    path('video_marketing',views.video_marketing,name='video_marketing'),
    
    path('remote_works',views.remote_works,name='remote_works'),
+   path('courses',views.courses,name='courses'),
    
     
 ]

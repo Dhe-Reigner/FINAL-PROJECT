@@ -1,4 +1,4 @@
-{% extends 'base.html' %}
+{% extends 'pages/base.html' %}
 {% load static %}
 {% block content %}
 
@@ -9,8 +9,8 @@
       <nav>
         <ol class="breadcrumb">
           <li class="breadcrumb-item"><a href="{% url 'index' %}">Home</a></li>
-          <li class="breadcrumb-item"></li>
-          <li class="breadcrumb-item active">Badges</li>
+          <!-- <li class="breadcrumb-item"></li> -->
+          <li class="breadcrumb-item active">Work with us</li>
         </ol>
       </nav>
     </div><!-- End Page Title -->
@@ -18,47 +18,49 @@
     <section class="section">
       <div class="row">
 
-        <div class="col-lg-6">
-
         {% for items in all_remote_work %}
-          <div class="card">
+        <div class="col-mb-3">
+        
+          <div class="card bg-light mb-3">
             <div class="card-body">
             <p class="card-text">{{ items.when_posted }} </p>
-              <h5 class="card-title">{{ items.job_title }} </h5>
-             <h1 class="card-title">{{ items.work_schedule }} </h1>
+              <h5> <a href="#" class="card-link" target="_blank">{{ items.job_title }}</a></h5>
+             
+             <p class="card-title">{{ items.work_schedule }} </p>
                <p class="card-text">{{ items.description }} </p>
 
 
              
-              <span class="badge bg-secondary">
-             <i class="fa-solid fa-check-to-slot"></i> {{ items.requirements }} </span>
-              <span class="badge bg-secondary">
-             <i class="fa-solid fa-check-to-slot"></i> {{ items.requirements }} </span>
-              <span class="badge bg-secondary">
-             <i class="fa-solid fa-check-to-slot"></i> {{ items.requirements }} </span>
-              <span class="badge bg-secondary">
-             <i class="fa-solid fa-check-to-slot"></i> {{ items.requirements }} </span>
-              <span class="badge bg-secondary">
-             <i class="fa-solid fa-check-to-slot"></i> {{ items.requirements }} </span>
               
-               <p class="card-text"> <i class="fa-solid fa-star btn-warning"></i></p>
-                <p class="card-text"> <i class="fa-solid fa-star btn-warning"></i></p>
-                 <p class="card-text"> <i class="fa-solid fa-star btn-warning"></i></p>
-                  <p class="card-text"> <i class="fa-solid fa-star btn-warning"></i></p>
-                   <p class="card-text"> <i class="fa-solid fa-star btn-warning"></i></p>
+                                
+              <span class="badge card-text bg-warning ">{{ items.requirements1 }} </span>
+              <span class="badge bg-warning"> {{ items.requirements2 }} </span>
+              <span class="badge bg-warning"> {{ items.requirements3 }} </span>
+             <span class="badge bg-warning">  {{ items.requirements4 }} </span>
+              <span class="badge bg-warning">  {{ items.requirements5 }} </span><br>
+             <!-- <i class="fa-solid fa-check-to-slot">{{ items.payment_verification }} </i><p class="card-text">{{ items.payment_verification }} </p> -->
+              
+              <!-- <span class="card-text"> <i class="fa-solid fa-star"></i></span>
+              <span class="card-text"> <i class="fa-solid fa-star"></i></span> 
+              <span class="card-text"> <i class="fa-solid fa-star"></i></span> 
+              <span class="card-text"> <i class="fa-solid fa-star"></i></span> 
+              <span class="card-text"> <i class="fa-solid fa-star"></i></span>  -->
+                
 
-                    <p class="card-text">{{ items.verification }} </p>
-                    <p class="card-text">{{ items.budget }} </p>
-                    <p class="card-text">{{ items.location }} </p>
+                    
+                    <span class="card-text">{{ items.budget }}</span>
+                    <span class="card-text"><i class="fa-solid fa-location-dot"></i>{{ items.location }}</span><br>
+
                     <p class="card-text">{{ items.proposal }} </p>
 
              
              
             </div>
+           
           </div><!-- End Default Badges -->
 
-         
-
+        
+          {% endfor %}
         </div>
 
       </div>
@@ -69,4 +71,4 @@
 
 
 
-{% endblock %}
+{% endblock content %}
