@@ -7,6 +7,7 @@ from.models import Influencer
 from.models import Affiliate
 from.models import Video
 from.models import Mobile
+from.models import RemoteWork
 
 # Register your models here.
 admin.site.register(Dashboard)
@@ -17,4 +18,5 @@ admin.site.register(Influencer)
 admin.site.register(Affiliate)
 admin.site.register(Video)
 admin.site.register(Mobile)
+admin.site.register(RemoteWork)
 

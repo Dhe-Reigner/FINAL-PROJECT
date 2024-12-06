@@ -80,3 +80,18 @@ class Mobile(models.Model):#Top Selling in Mobile Marketing
    
     def __str__(self):
         return str(self.product)
+    
+class RemoteWork(models.Model):
+    when_posted =  models.CharField(max_length=100, default='', blank=True, null=True)
+    job_title = models.CharField(max_length=200, default='', blank=True, null=True)
+    work_schedule = models.CharField(max_length=200, default='', blank=True, null=True)
+    description = models.CharField(max_length=200, default='', blank=True, null=True)
+    requirements = models.CharField(max_length=200, default='', blank=True, null=True)
+    payment_verification = models.CharField(max_length=200, default='', blank=True, null=True)
+    budget = models.CharField(max_length=200, default='', blank='', null=True)
+    location = models.CharField(max_length=200, default='', blank=True, null=True)
+    proposal = models.CharField(max_length=200, default='', blank=True, null=True)
+    
+    def __str__(self):
+        return self.job_title
+    

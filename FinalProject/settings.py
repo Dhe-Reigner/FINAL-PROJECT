@@ -27,7 +27,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-(q4t6x@%!7n+b7!qhpu$o)gzeeqg$i(l1a%k@^jck7h8t5f)@g'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = []
 
@@ -81,24 +81,36 @@ WSGI_APPLICATION = 'FinalProject.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
-}
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
 
 
 # DATABASES = {
 #     'default': {
 #         'ENGINE': 'django.db.backends.mysql',
 #         'NAME': 'finalprojectdb',  # Replace with your MySQL database name
-#         'USER': 'your_mysql_username',  # Replace with your MySQL username
+#         'USER': 'root',  # Replace with your MySQL username
 #         'PASSWORD': '',  # Replace with your MySQL password
 #         'HOST': 'localhost',  # Use 'localhost' or the host of your MySQL server
-#         'PORT': '3306',  # Default MySQL port is 3306
+#         'PORT': '3307',  # Default MySQL port is 3306
 #     }
 # }
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'db',         # Database name
+        'USER': 'postgres',       # PostgreSQL user
+        'PASSWORD': 'Martoh',     # Password for the user
+        'HOST': 'localhost',           # Database host
+        'PORT': '5432',                # Default PostgreSQL port
+    }
+}
+
 
 # Password validation
 # https://docs.djangoproject.com/en/5.1/ref/settings/#auth-password-validators

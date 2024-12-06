@@ -22,6 +22,9 @@ urlpatterns = [
    path('mobile_marketing',views.mobile_marketing,name='mobile_marketing'),
    path('social_media_marketing',views.social_media_marketing,name='social_media_marketing'),
    path('video_marketing',views.video_marketing,name='video_marketing'),
+   
+   path('remote_works',views.remote_works,name='remote_works'),
+   
     
 ]
  

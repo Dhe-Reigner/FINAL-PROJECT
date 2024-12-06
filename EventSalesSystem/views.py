@@ -7,6 +7,7 @@ from.models import Influencer
 from.models import Affiliate
 from.models import Video
 from.models import Mobile
+from.models import RemoteWork 
 
 
 
@@ -86,4 +87,10 @@ def video_marketing(request):
     all_video = Video.objects.all()
     return render(request, 'video_marketing.html', {
         'all_video': all_video,  # pass all video marketing data to the template,  # pass all social media data to the template
+    })
+    
+def remote_works(request):
+    all_remote_work = RemoteWork.objects.all()
+    return render(request, 'remote_work.html', {
+        'all_remote_work': all_remote_work,  # pass all remote work data to the template,  # pass all social media data to the template
     })
