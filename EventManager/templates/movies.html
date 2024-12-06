@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+
+<br></br>
+
+
+ <div class="container">
+    <div class="row">
+        {% for items in all_movies %}
+        <div class="col">
+
+<!-- Card with an image on left -->
+<div class="card mb-3">
+    <div class="row g-0">
+      <div class="col-md-4">
+        {% if items.image3 %}
+              <div class="col-md-12">
+                <img src="{{ items.image3.url }}" class="card-img-top custom-img" alt="{{ items.image3 }}" style="max-width: 100%; height: auto;">
+              </div>
+              {% else %}
+              <p>No image found for this item</p>
+              {% endif %}
+      </div>
+      <!-- <div class="col-md-4">
+        {% if items.qr_code %}
+              <div class="col-md-12">
+                <img src="{{ items.qr_code.url }}" class="card-img-top custom-img" alt="{{ items.qr_code }}" style="max-width: 100%; height: auto;">
+              </div>
+              {% else %}
+              <p>No image found for this item</p>
+              {% endif %}
+      </div> -->
+      <div class="col-md-8">
+        <div class="card-body">
+          <img src="{{ items.qr_code3.url }}" class="card-img-top custom-img" alt="{{ items.qr_code3 }}" style="width: 20rem; height: 23rem;"><br>
+            Special Events
+          <h5 class="card-title"><strong>{{ items.name3 }} </strong> </h5>
+          <p class="card-text"><strong>start date</strong> {{ items.start_date3 }}</p>
+          <p class="card-text"><strong>End date</strong> {{ items.end_date3 }}</p>
+          <p class="card-text"><strong>Location</strong> {{ items.location.name3 }}</p>
+          <p class="card-text"><strong>Details</strong> {{ items.event_detail3 }}</p>
+          <p class="card-text">{{ items.description3 }}</p> 
+          <input type="submit" value="submit" class="btn btn-secondary"></input>
+          <a href="{% url 'my_index' %}" class="btn btn-secondary">Cancel</a>
+        </div>
+      </div>
+    </div>
+  </div><!-- End Card with an image on left -->
+
+        </div>
+      {% endfor %}
+    </div>
+</div>
+
+
+{% endblock content%}

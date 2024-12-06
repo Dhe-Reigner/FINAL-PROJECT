@@ -1,0 +1,51 @@
+{%  extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+
+<br></br>
+
+
+ <br></br>
+
+
+ <div class="container">
+    <div class="row">
+      {% for items in all_kids %}
+      <div class="col-md-4 mb-4">
+
+            
+            <div class="card" style=" height: 34rem; width: 22rem;">
+            <div class="card-header">
+            <h5 class="card-title">
+             <a href="{% url 'event_detail' event_id=items.id %}"> {{ items.name1 }}</a></h5>
+            {% comment %} {% if items.location %}
+              <a href="{{ items.location }}" class="card-link" target="_blank">Visit Website</a>
+               {% comment %} <p class="card-text"><strong>date</strong> {{ items.start_date }}</p>  {% endcomment %}
+            {% comment %}  {% endif %} {% endcomment %}
+            </div>
+            <div class="card-body">
+              {% if items.image %}
+              <div class="">
+
+               <a href="{% url 'event_detail' event_id=items.id %}">
+                <img src="{{ items.image1.url }}" class="card-img-top" alt="{{ items.image1 }}" style="width: 20rem; height: 23rem;">{{ all_event_details }}</a><br>
+              </div>
+              {% else %}
+              <p>No image found for this item</p>
+              {% endif %}
+            </div>
+            <div class="card-footer">
+            
+            
+          <button type="button" class="btn btn-warning"> <a href="{% url 'event_detail' event_id=items.id %}">Tickets</a></button>
+            </div>
+          </div><!-- End Card with header and footer -->
+
+        </div>
+        {% endfor %}
+    </div>
+</div> 
+
+
+{% endblock content %}

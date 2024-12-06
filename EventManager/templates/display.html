@@ -2,70 +2,9 @@
 {% load static %}
 {% block content %}
 
-{% comment %} <div class="col">
-    <img src="{% static 'img/d11.jpg' %}" class="img-fluid" alt="..."
-    <br><br>
-    <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
-        <div class="carousel-inner">
-          <div class="carousel-item active">
-            <div class="card" style="width: 18rem;">
-                <img src="{% static 'img/d11.jpg' %}" class="card-img-top" alt="...">
-                <div class="card-body">
-                  <h5 class="card-title">Card title</h5>
-                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                  <a href="#" class="btn btn-primary">Go somewhere</a>
-                </div>
-              </div>
 
 
-
-
-
-
-
-
-
-
-            <img src="..." class="d-block w-100" alt="...">
-          </div>
-          <div class="carousel-item">
-            <img src="..." class="d-block w-100" alt="...">
-          </div>
-          <div class="carousel-item">
-            <img src="..." class="d-block w-100" alt="...">
-          </div>
-        </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Next</span>
-        </button>
-      </div>
-    </a><br>
-    
-</div> 
-
-
-
-
-{% for images in display %}
-
-<div class="">
-             
-              <div class="col">
-
-               <a href="{% url 'my_display' %}">
-                <img src="{{ images.image.url }}" class="card-img-top" alt="{{ images.image }}">{{ all_displays }}</a><br>
-            {{ images.date }}<br>
-{{ images.description }}
-              </div>
-             
-            </div> 
-            {% endfor %}
-            {% endcomment %}
+  
 
 <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
   <div class="carousel-inner">
@@ -88,6 +27,12 @@
     <span class="visually-hidden">Next</span>
   </button>
 </div>
+ 
+ </div>
+ </div>
+
+
+
 
   {% for displays in display %}
       <div class="card" style="width: 18rem;">
@@ -96,8 +41,13 @@
   <div class="card-body">
     <h5 class="card-title">{{ displays.date }} </h5>
     <p class="card-text">{{ displays.name }} </p>
-    {% comment %} <button type="button" class="btn btn-warning"> <a href="{% url 'event_detail' event_id=items.id %}">Tickets</a></button> {% endcomment %}
+    <button type="button" class="btn btn-warning"> <a href="{% url 'event_detail' event_id=items.id %}">Tickets</a></button> 
   </div>
-  {% endfor %}
+
+   {% endfor %}
+ 
+
+
+ 
 
 {% endblock content %}

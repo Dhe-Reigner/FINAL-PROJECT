@@ -7,6 +7,9 @@ from .models import Event, Venue
 from .models import EventDetail
 from .forms import EventForm
 from .models import Display
+from .models import Kid
+from .models import Lifestyle
+from .models import Movie
 
 
 
@@ -75,7 +78,23 @@ def show_venue(request, venue_id):
 
 
 
-
+    
+def kids(request):
+    all_kids =  Kid.objects.all()
+    return render(request, 'kids.html',{
+            'all_kids':all_kids
+        })
+def lifestyle(request):
+    all_lifestyle =  Lifestyle.objects.all()
+    return render(request, 'lifestyle.html',{
+            'all_lifestyle':all_lifestyle
+        })
+        
+def movies(request):
+    all_movies =  Movie.objects.all()
+    return render(request, 'movies.html',{
+            'all_movies':all_movies
+        })
 # from django.shortcuts import render, redirect, reverse
 # from django.conf import settings
 

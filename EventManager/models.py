@@ -42,6 +42,48 @@ class Event(models.Model):
     def __str__(self):
         return self.name
     
+class Kid(models.Model):
+    name1 = models.CharField(max_length=100)
+    location1 = models.ForeignKey(Location, on_delete=models.CASCADE, max_length=100)     
+    image1 = models.ImageField(upload_to='images/', default='', blank=True, null=True)
+    qr_code1 = models.ImageField(upload_to='qr_codes/',blank=True)
+    description1 = models.TextField()
+    start_date1 = models.DateTimeField(default=datetime(2024, 1, 1))
+    end_date1 = models.DateTimeField(default=datetime(2024, 1, 1))
+    event_detail1 = models.TextField(default='', blank=True, null=True)
+    
+     
+    def __str__(self):
+        return self.name1
+    
+class Lifestyle(models.Model):
+    name2 = models.CharField(max_length=100)
+    location2 = models.ForeignKey(Location, on_delete=models.CASCADE, max_length=100)     
+    image2 = models.ImageField(upload_to='images/', default='', blank=True, null=True)
+    qr_code2 = models.ImageField(upload_to='qr_codes/',blank=True)
+    description2 = models.TextField()
+    start_date2 = models.DateTimeField(default=datetime(2024, 1, 1))
+    end_date2 = models.DateTimeField(default=datetime(2024, 1, 1))
+    event_detail2 = models.TextField(default='', blank=True, null=True)
+    
+     
+    def __str__(self):
+        return self.name2
+    
+class Movie(models.Model):
+    name3 = models.CharField(max_length=100)
+    location3 = models.ForeignKey(Location, on_delete=models.CASCADE, max_length=100)     
+    image3 = models.ImageField(upload_to='images/', default='', blank=True, null=True)
+    qr_code3 = models.ImageField(upload_to='qr_codes/',blank=True)
+    description3 = models.TextField()
+    start_date3 = models.DateTimeField(default=datetime(2024, 1, 1))
+    end_date3 = models.DateTimeField(default=datetime(2024, 1, 1))
+    event_detail3 = models.TextField(default='', blank=True, null=True)
+    
+     
+    def __str__(self):
+        return self.name3
+    
 class EventDetail(models.Model):
     image = models.ImageField(upload_to='images/', default='', blank=True, null=True)
     qr_code = models.ImageField(upload_to='qr_codes/',blank=True)

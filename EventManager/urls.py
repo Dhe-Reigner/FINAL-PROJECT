@@ -14,6 +14,11 @@ urlpatterns = [
     path('list_venues/',views.list_venues,name='list_venues'),
     path('show_venue/<venue_id>/',views.show_venue,name='show_venue'),
     path('daraja/stk_push', views.stk_push_callback,name='stk_push_callback'),
+    
+    path('kids', views.kids,name='my_kids'),
+   path('lifestyle', views.lifestyle,name='my_lifestyle'),
+   path('movies', views.movies,name='my_movies'),
+    
 
    
 ]
