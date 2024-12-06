@@ -32,15 +32,22 @@
 <main id="main" class="main">
 
     <div class="pagetitle">
-      <h1>Remote Works</h1>
+      <h1>Our Courses</h1>
       <nav>
         <ol class="breadcrumb">
           <li class="breadcrumb-item"><a href="{% url 'index' %}">Home</a></li>
           <!-- <li class="breadcrumb-item"></li> -->
-          <li class="breadcrumb-item active">Work with us</li>
+          <li class="breadcrumb-item active">Courses Offered</li>
         </ol>
       </nav>
     </div><!-- End Page Title -->
+
+    <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">MarketMyEvent Courses</h5>
+            We also train you with or without prior experience in any of your courses. This helps us work with us and equip your skill set for diverse problem solving.
+            </div>
+          </div><!-- End Default Card -->
 
     <section class="section">
       <div class="row">
@@ -50,7 +57,7 @@
 
  <div class="card md-6">
             <!-- <img src="assets/img/card.jpg" class="card-img-top" alt="..."> -->
-            <img src="{{ items.image.url }}" class="card-img-top custom-img" alt="{{ items.image }}" style="width:10rem; height:13rem;">
+            <img src="{{ items.image.url }}" class="card-img-top custom-img" alt="{{ items.image }}" style="width:18rem; height:13rem;">
             <div class="card-body">
               <h5 class="card-title">{{ items.course_name }} </h5>
               <p class="card-text">Ksh{{ items.price }} </p>
