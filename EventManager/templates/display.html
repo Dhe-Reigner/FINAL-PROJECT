@@ -28,12 +28,11 @@
   </button>
 </div>
  
- </div>
- </div>
 
 
 
 
+{% comment %} 
   {% for displays in display %}
       <div class="card" style="width: 18rem;">
  
@@ -45,7 +44,123 @@
   </div>
 
    {% endfor %}
- 
+  {% endcomment %}
+
+
+ <!-- Services Section -->
+    <section id="services" class="services section">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Services</h2>
+        <p>We Market your events in our diverse digital marketing platforms</p>
+      </div><!-- End Section Title -->
+
+      <div class="container">
+
+        <div class="row gy-4">
+
+          {% comment %} <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+            <div class="service-item position-relative">
+              <div class="icon">
+                <i class="bi bi-activity"></i>
+              </div>
+              <a href="#" class="stretched-link">
+               <img src="{% static 'img/affiliate marketing.jpeg' %}" class="card-img-top custom-img" alt="" style="width:18rem; height:13rem;">
+            </div>
+          </div><!-- End Service Item --> {% endcomment %}
+
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+            <div class="service-item position-relative">
+              <div class="icon">
+                <i class="bi bi-broadcast"></i>
+              </div>
+              <a href="#" class="stretched-link">
+               <img src="{% static 'img/content marketing.jpeg' %}" class="card-img-top custom-img" alt="" style="width:18rem; height:13rem;">
+              </a>
+              <p></p>
+            </div>
+          </div><!-- End Service Item -->
+
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+            <div class="service-item position-relative">
+              <div class="icon">
+                <i class="bi bi-easel"></i>
+              </div>
+              <a href="#" class="stretched-link">
+               <img src="{% static 'img/social media marketing.jpeg' %}" class="card-img-top custom-img" alt="" style="width:18rem; height:13rem;">
+              </a>
+              <p></p>
+            </div>
+          </div><!-- End Service Item -->
+
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="400">
+            <div class="service-item position-relative">
+              <div class="icon">
+                <i class="bi bi-bounding-box-circles"></i>
+              </div>
+              <a href="#" class="stretched-link">
+               <img src="{% static 'img/video marketing.jpeg' %}" class="card-img-top custom-img" alt="" style="width:18rem; height:13rem;">
+              </a>
+              <p></p>
+              <a href="#" class="stretched-link"></a>
+            </div>
+          </div><!-- End Service Item -->
+
+          {% comment %} <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="500">
+            <div class="service-item position-relative">
+              <div class="icon">
+                <i class="bi bi-calendar4-week"></i>
+              </div>
+              <a href="service-details.html" class="stretched-link">
+                <h3>Velit Doloremque</h3>
+              </a>
+              <p>Cumque et suscipit saepe. Est maiores autem enim facilis ut aut ipsam corporis aut. Sed animi at autem alias eius labore.</p>
+              <a href="service-details.html" class="stretched-link"></a>
+            </div>
+          </div><!-- End Service Item -->
+
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="600">
+            <div class="service-item position-relative">
+              <div class="icon">
+                <i class="bi bi-chat-square-text"></i>
+              </div>
+              <a href="service-details.html" class="stretched-link">
+                <h3>Dolori Architecto</h3>
+              </a>
+              <p>Hic molestias ea quibusdam eos. Fugiat enim doloremque aut neque non et debitis iure. Corrupti recusandae ducimus enim.</p>
+              <a href="service-details.html" class="stretched-link"></a>
+            </div>
+          </div><!-- End Service Item --> {% endcomment %}
+
+        </div>
+
+      </div>
+
+    </section><!-- /Services Section -->
+
+  <div class="container">
+      <div class="row ">
+<h1>Martin</h1>
+         {% for displays in display %} 
+        <div class="col-4">
+
+ <div class="card" style=" height: 20rem; width: 18rem;">
+            <!-- <img src="assets/img/card.jpg" class="card-img-top" alt="..."> -->
+            <img src="{{ displays.image.url }}" class="card-img-top custom-img" alt="{{ displays.image }}" style="width:18rem; height:13rem;">
+            <div class="card-body">
+              <h5 class="card-title">{{ displays.date }} </h5>
+              <p class="card-text">{{ displays.name }} </p>
+            </div>
+         
+          </div><!-- End Card with an image on top -->
+
+        </div>
+        {% endfor %}
+        </div>
+
+      </div>
+    
 
 
  

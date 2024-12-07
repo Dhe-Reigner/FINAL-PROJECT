@@ -10,8 +10,8 @@
   <meta name="keywords" content="">
 
   <!-- Favicons -->
-  <link href="{% static 'assets/img/favicon.png' %}" rel="icon">
-  <link href="{% static 'assets/img/apple-touch-icon.png' %}" rel="apple-touch-icon">
+  {% comment %} <link href="{% static 'assets/img/favicon.png' %}" rel="icon">
+  <link href="{% static 'assets/img/apple-touch-icon.png' %}" rel="apple-touch-icon"> {% endcomment %}
 
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com" rel="preconnect">
@@ -56,18 +56,18 @@
           <a class="nav-link text-white" href="{% url 'my_index' %}">
           <i class="fa-solid fa-house-user"></i>Home</a> 
         </li>
-         <li class="nav-item">
+         {% comment %} <li class="nav-item">
           <a class="nav-link text-white" href="{%  url 'my_movies' %}">
-          <i class="fa-solid fa-house-user"></i>Movies</a> 
+          </i>Movies</a> 
         </li>
          <li class="nav-item">
           <a class="nav-link text-white" href="{% url 'my_kids' %}">
-          <i class="fa-solid fa-house-user"></i>Kids</a> 
+          </i>Kids</a> 
         </li>
          <li class="nav-item">
           <a class="nav-link text-white" href="{% url 'my_lifestyle' %}">
-          <i class="fa-solid fa-house-user"></i>Lifestyle</a> 
-        </li>
+          </i>Lifestyle</a> 
+        </li> {% endcomment %}
         <li class="nav-item">
           
           {% if items.id %}
@@ -85,7 +85,7 @@
         </li>
         <li class="nav-item">
           <a class="nav-link text-white" href="{% url 'add_event' %}">
-          <i class="fa-solid fa-plus"></i>Add Event</a>
+          {% comment %} <i class="fa-solid fa-plus"></i>Add Event</a> {% endcomment %}
         {% comment %} </li>
         <li class="nav-item">
           <a class="nav-link text-white" href="{% url 'list_venues' %}">Venues</a>
@@ -205,7 +205,7 @@
   {% endblock content %}
 
 
-   <footer id="footer" class="footer dark-background">
+   {% comment %} <footer id="footer" class="footer dark-background">
 
     <div class="container footer-top">
       <div class="row gy-4">
@@ -298,7 +298,7 @@
   <script src="{% static 'assets/vendor/imagesloaded/imagesloaded.pkgd.min.js' %}"></script>
   <script src="{% static 'assets/vendor/isotope-layout/isotope.pkgd.min.js' %}"></script>
   <script src="{% static 'assets/vendor/swiper/swiper-bundle.min.js' %}"></script>
-  <script src="{% static 'assets/vendor/purecounter/purecounter_vanilla.js' %}"></script>
+  <script src="{% static 'assets/vendor/purecounter/purecounter_vanilla.js' %}"></script> {% endcomment %}
 
   <!-- Main JS File -->
   <script src="{% static 'assets/js/main.js' %}"></script>
