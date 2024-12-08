@@ -24,6 +24,7 @@ class Display(models.Model):
     image = models.ImageField(upload_to='images/', blank=True)
     date = models.DateField(default="2024-01-01")
     name = models.CharField(default='', max_length=100)
+    location = models.ForeignKey(Location, on_delete=models.CASCADE, max_length=100, default='', blank=True, null=True)   
     
     def __str__(self):
         return str(self.name)

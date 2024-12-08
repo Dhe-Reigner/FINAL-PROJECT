@@ -13,8 +13,14 @@ from.models import course
 
 
 # Create your views here.
+# def index(request):
+#     return render(request, 'pages/index.html', {})
+
 def index(request):
-    return render(request, 'pages/index.html', {})
+    all_dashboard = Dashboard.objects.all()
+    return render(request, 'pages/index.html', {
+        'all_dashboard': all_dashboard,  # pass all dashboard data to the template,  # pass all social media data to the template
+    })
 
 def pages_blank(request):
     return render(request, 'pages_blank.html', {})
@@ -68,7 +74,7 @@ def email_marketing(request):
 
 def influencer_marketing(request):
     all_influencer = Influencer.objects.all()
-    return render(request, 'social_media_marketing.html', {
+    return render(request, 'influencer_marketing.html', {
         'all_influencer': all_influencer,  # pass all influencer data to the template
     })
 

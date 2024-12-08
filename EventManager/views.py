@@ -41,6 +41,12 @@ def display(request):
     return render(request, 'display.html',{
         'display': all_displays
     })
+# def display(request, event_id):
+#     all_displays =  Event.objects.filter(pk=event_id)
+#     if all_displays.exists():
+#         return render(request, 'EventManager/display.html',{
+#             'all_displays':all_displays
+#         })
 
 
 def event_detail(request, event_id):
