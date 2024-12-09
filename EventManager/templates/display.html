@@ -66,19 +66,10 @@
 
 
 
-{% comment %} 
-  {% for displays in display %}
-      <div class="card" style="width: 18rem;">
- 
-  <img src="{{ displays.image.url }}" class="card-img-top" alt="{{ displays.image }}" style="width: 20rem; height: 23rem;"></a><br>
-  <div class="card-body">
-    <h5 class="card-title">{{ displays.date }} </h5>
-    <p class="card-text">{{ displays.name }} </p>
-    <button type="button" class="btn btn-warning"> <a href="{% url 'event_detail' event_id=items.id %}">Tickets</a></button> 
-  </div>
 
-   {% endfor %}
-  {% endcomment %}
+  
+    
+  
 
  <!-- About Section -->
  <section id="about" class="about section">
@@ -275,7 +266,7 @@
 
 
 
-<section>
+<section id="events" class="events section dark-background">
   <div class="container section-title" data-aos="fade-up">
     <h2>Events</h2>
     <p>Events around you.</p>
@@ -315,10 +306,10 @@
 </section>
 
 
-<!-- Testimonials Section -->
+ <!-- Testimonials Section -->
  <section id="testimonials" class="testimonials section dark-background">
 
-  <img src="{% static 'img/d4.jpg' %}" class="d4" alt="">
+  <img src="{% static 'assets/img/d4.jpg' %}" class="testimonials-bg" alt="">
 
   <div class="container" data-aos="fade-up" data-aos-delay="100">
 
@@ -342,7 +333,7 @@
 
         <div class="swiper-slide">
           <div class="testimonial-item">
-            <img src="assets/img/testimonials/testimonials-1.jpg" class="testimonial-img" alt="" script="height:12rem">
+            <img src="{% static 'assets/img/testimonials/testimonials-1.jpg' %}" class="testimonial-img" alt="">
             <h3>Saul Goodman</h3>
             <h4>Ceo &amp; Founder</h4>
             <div class="stars">
@@ -358,7 +349,7 @@
 
         <div class="swiper-slide">
           <div class="testimonial-item">
-            <img src="assets/img/testimonials/testimonials-2.jpg" class="testimonial-img" alt="">
+            <img src="{% static 'assets/img/testimonials/testimonials-2.jpg' %}" class="testimonial-img" alt="">
             <h3>Sara Wilsson</h3>
             <h4>Designer</h4>
             <div class="stars">
@@ -374,7 +365,7 @@
 
         <div class="swiper-slide">
           <div class="testimonial-item">
-            <img src="assets/img/testimonials/testimonials-3.jpg" class="testimonial-img" alt="">
+            <img src="{% static 'assets/img/testimonials/testimonials-3.jpg' %}" class="testimonial-img" alt="">
             <h3>Jena Karlis</h3>
             <h4>Store Owner</h4>
             <div class="stars">
@@ -390,7 +381,7 @@
 
         <div class="swiper-slide">
           <div class="testimonial-item">
-            <img src="assets/img/testimonials/testimonials-4.jpg" class="testimonial-img" alt="">
+            <img src="{% static 'assets/img/testimonials/testimonials-4.jpg' %}" class="testimonial-img" alt="">
             <h3>Matt Brandon</h3>
             <h4>Freelancer</h4>
             <div class="stars">
@@ -406,7 +397,7 @@
 
         <div class="swiper-slide">
           <div class="testimonial-item">
-            <img src="assets/img/testimonials/testimonials-5.jpg" class="testimonial-img" alt="">
+            <img src="{% static 'assets/img/testimonials/testimonials-5.jpg' %}" class="testimonial-img" alt="">
             <h3>John Larson</h3>
             <h4>Entrepreneur</h4>
             <div class="stars">
@@ -426,9 +417,7 @@
 
   </div>
 
-</section> 
-
-<!-- /Testimonials Section -->
+</section><!-- /Testimonials Section -->
 
 
 
@@ -443,7 +432,7 @@
   <div class="container" data-aos="fade-up" data-aos-delay="100">
 
     <div class="mb-4" data-aos="fade-up" data-aos-delay="200">
-      <iframe style="border:0; width: 100%; height: 270px;" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d48389.78314118045!2d-74.006138!3d40.710059!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25a22a3bda30d%3A0xb89d1fe6bc499443!2sDowntown%20Conference%20Center!5e0!3m2!1sen!2sus!4v1676961268712!5m2!1sen!2sus" frameborder="0" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.706014183795!2d36.90288207380622!3d-1.3529549357001835!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f0d168d84ca43%3A0xe64edee22e300ea0!2sArgyle%20Grand%20Hotel%20Nairobi%20Airport!5e0!3m2!1sen!2ske!4v1733767401073!5m2!1sen!2ske" style="border:0; width: 100%; height: 270px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
     </div><!-- End Google Maps -->
 
     <div class="row gy-4">
@@ -453,7 +442,7 @@
           <i class="bi bi-geo-alt flex-shrink-0"></i>
           <div>
             <h3>Address</h3>
-            <p>A108 Adam Street, New York, NY 535022</p>
+            <p>P.O. BOX 43-4323, Nairobi</p>
           </div>
         </div><!-- End Info Item -->
 
@@ -461,7 +450,7 @@
           <i class="bi bi-telephone flex-shrink-0"></i>
           <div>
             <h3>Call Us</h3>
-            <p>+1 5589 55488 55</p>
+            <p>+254728672557</p>
           </div>
         </div><!-- End Info Item -->
 
@@ -469,7 +458,7 @@
           <i class="bi bi-envelope flex-shrink-0"></i>
           <div>
             <h3>Email Us</h3>
-            <p>info@example.com</p>
+            <p>info@marketmyevent.com</p>
           </div>
         </div><!-- End Info Item -->
 

@@ -10,6 +10,7 @@ from.models import Mobile
 from.models import RemoteWork
 from.models import course
 from.models import User_Profile
+from.models import Student
 
 # Register your models here.
 admin.site.register(Dashboard)
@@ -23,4 +24,5 @@ admin.site.register(Mobile)
 admin.site.register(RemoteWork)
 admin.site.register(course)
 admin.site.register(User_Profile)
+admin.site.register(Student)
 
