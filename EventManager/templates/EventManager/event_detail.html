@@ -38,7 +38,8 @@
           <p class="card-text"><strong>Location</strong> {{ event.location.name }}</p>
           <p class="card-text"><strong>Details</strong> {{ event.event_detail }}</p>
           <p class="card-text">{{ event.description }}</p> 
-          <input type="submit" value="submit" class="btn btn-secondary"></input>
+          {% comment %} <input type="Make Payment" value="Make Payment" class="btn btn-secondary"><a href="{% url 'form' %}" class="btn btn-secondary">Cancel</a></input> {% endcomment %}
+          <a href="#" class="btn btn-secondary">Initiate Payment</a>
           <a href="{% url 'my_index' %}" class="btn btn-secondary">Cancel</a>
         </div>
       </div>

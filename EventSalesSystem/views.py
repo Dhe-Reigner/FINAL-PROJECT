@@ -9,6 +9,7 @@ from.models import Video
 from.models import Mobile
 from.models import RemoteWork 
 from.models import course
+from.models import User_Profile
 
 
 
@@ -108,4 +109,10 @@ def courses(request):
     all_courses = course.objects.all()
     return render(request, 'courses.html', {
         'all_courses': all_courses,  # pass all courses data to the template,  # pass all social media data to the template
+    })
+    
+def user_profile(request):
+    all_user_profile = User_Profile.objects.all()
+    return render(request, 'user_profile.html', {
+        'all_user_profile': all_user_profile,  # pass all user_profile data to the template,  # pass all social media data to the template
     })

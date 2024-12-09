@@ -25,6 +25,7 @@ urlpatterns = [
    
    path('remote_works',views.remote_works,name='remote_works'),
    path('courses',views.courses,name='courses'),
+   path('user_profile',views.user_profile,name='user_profile'),
    
     
 ]

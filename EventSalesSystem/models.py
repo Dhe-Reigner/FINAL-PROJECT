@@ -106,3 +106,22 @@ class course(models.Model):
     
     def __str__(self):
         return self.course_name
+    
+    
+class User_Profile(models.Model):
+    profile_image = models.ImageField(upload_to='images/', default='', blank=True, null=True)
+    full_name = models.CharField('Product',max_length=100, default='', blank=True, null=True)
+    about = models.TextField(max_length=1000, default='', blank=True, null=True)
+    company  = models.CharField(max_length=100, default='', blank=True, null=True)
+    job = models.CharField(max_length=100, default='', blank=True, null=True)
+    country = models.CharField(max_length=100, default='', blank=True, null=True)
+    address = models.CharField(max_length=100, default='', blank=True, null=True)
+    phone = models.IntegerField()
+    Email = models.EmailField(max_length=100, default='', blank=True, null=True)
+    twitter_profile = models.CharField(max_length=100, default='', blank=True, null=True)
+    facebook_profile = models.CharField(max_length=100, default='', blank=True, null=True)
+    instagram_profile = models.CharField(max_length=100, default='', blank=True, null=True)
+    linkedin_profile = models.CharField(max_length=100, default='', blank=True, null=True)
+    
+    def __str__(self):
+        return self.full_name

@@ -45,6 +45,8 @@ INSTALLED_APPS = [
     'members',
     'EventSalesSystem',
     'django_daraja',
+    'pesaapp',
+    'rest_framework',
 ]
 
 MIDDLEWARE = [

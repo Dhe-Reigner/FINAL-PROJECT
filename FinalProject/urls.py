@@ -25,6 +25,8 @@ urlpatterns = [
     path('members/',include('django.contrib.auth.urls')),
     path('members/',include('members.urls')),
     path('EventSalesSystem/', include('EventSalesSystem.urls')),
+    path('api/v1/', include('pesaapp.urls')),
+    path('form/', include('pesaapp.urls')),
 ]
 
 # if settings.DEBUG:
