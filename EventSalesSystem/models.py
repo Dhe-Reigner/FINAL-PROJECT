@@ -117,7 +117,7 @@ class User_Profile(models.Model):
     country = models.CharField(max_length=100, default='', blank=True, null=True)
     address = models.CharField(max_length=100, default='', blank=True, null=True)
     phone = models.IntegerField()
-    Email = models.EmailField(max_length=100, default='', blank=True, null=True)
+    email = models.EmailField(max_length=100, default='', blank=True, null=True)
     twitter_profile = models.CharField(max_length=100, default='', blank=True, null=True)
     facebook_profile = models.CharField(max_length=100, default='', blank=True, null=True)
     instagram_profile = models.CharField(max_length=100, default='', blank=True, null=True)

@@ -1,6 +1,6 @@
 from django import forms
 from django.forms import ModelForm
-from .models import Social
+# from .models import Social
 from.models import User_Profile
 from .models import Student
 
@@ -26,13 +26,13 @@ class StudentForm(forms.ModelForm):
             
     }    
 
-class EventForm(ModelForm):
-    class Meta:
-        model = Social
-        fields = ('image','product','price','quantity_sold','revenue')
+# class EventForm(ModelForm):
+#     class Meta:
+#         model = Social
+#         fields = ('image','product','price','quantity_sold','revenue')
         
         
-class UserProfileForm(ModelForm):
+class User_ProfileForm(ModelForm):
     class Meta:
         model = User_Profile
         fields = ['full_name','about','company','job','country','address','phone','email']
@@ -62,7 +62,7 @@ class UserProfileForm(ModelForm):
 class StudentForm(forms.ModelForm):
     class Meta:
         model = Student
-        fields = ['student_number', 'first_name', 'last_name', 'email', 'field_of_study', 'mean_score']
+        fields = ['student_number', 'first_name', 'last_name', 'email', 'field_of_study']
         labels = {
             'student_number': 'Student Number',
             'first_name' : 'First Name',
